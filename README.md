@@ -1,13 +1,15 @@
 # 42_school_CPP
 CPP piscine from 42 school
 
-## CPP00 Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
+## CPP00 
+### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
 
 ### EX00 
 ### EX01
 ### EX02
 
-## CPP01 Memory Allocation, pointers to members, references, switch statement
+## CPP01 
+### Memory Allocation, pointers to members, references, switch statement
 
 ### EX00 
 ### EX01
@@ -21,7 +23,8 @@ links:
     https://www.youtube.com/watch?v=YpvVnZNMk_g
 
 
-## CPP02 - Ad-hoc Polimorphism, operator overloading and Ortodox Canonical class
+## CPP02
+### Ad-hoc Polimorphism, operator overloading and Ortodox Canonical class
 
 ### EX00
 ####    - Float Point Numbers
@@ -54,4 +57,9 @@ links:
 - Links:
     https://www.youtube.com/watch?v=HYAgJN3x4GA
 
-## CPP03 - Inheritanc
+## CPP03
+### Inheritanc
+
+### EX00
+
+### EX01
