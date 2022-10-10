@@ -67,7 +67,8 @@ Overloading operator << >>
 ### EX03 BSP Binary Space Partioning
 
 - Links:
-    https://www.youtube.com/watch?v=HYAgJN3x4GA
+
+	https://www.youtube.com/watch?v=HYAgJN3x4GA
 
 ## CPP03
 ### Inheritanc
