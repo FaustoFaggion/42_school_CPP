@@ -66,7 +66,7 @@ Overloading operator << >>
 
 ### EX03 BSP Binary Space Partioning
 
-- Links:
+Links:
 
 	https://www.youtube.com/watch?v=HYAgJN3x4GA
 
