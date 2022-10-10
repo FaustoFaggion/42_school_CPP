@@ -4,20 +4,20 @@ CPP piscine from 42 school
 ## CPP00 
 ### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
 
-### EX00 
-### EX01
-### EX02
+#### EX00 
+#### EX01
+#### EX02
 
 ## CPP01 
 ### Memory Allocation, pointers to members, references, switch statement
 
-### EX00 
-### EX01
-### EX02
-### EX03
-### EX04
-### EX05
-### EX06 - Switch Case
+#### EX00 
+#### EX01
+#### EX02
+#### EX03
+#### EX04
+#### EX05
+#### EX06 - Switch Case
 links:
     
     https://www.youtube.com/watch?v=YpvVnZNMk_g
@@ -26,7 +26,7 @@ links:
 ## CPP02
 ### Ad-hoc Polimorphism, operator overloading and Ortodox Canonical class
 
-### EX00
+#### EX00
 #### Float Point Numbers, Const, Static.
 links: 
 
@@ -60,11 +60,11 @@ Overloading operator << >>
 
 	https://www.youtube.com/watch?v=2972LRdyquk&t=355s
 
-### EX01
+#### EX01
 
-### EX02
+#### EX02
 
-### EX03 BSP Binary Space Partioning
+#### EX03 BSP Binary Space Partioning
 
 Links:
 
@@ -73,6 +73,6 @@ Links:
 ## CPP03
 ### Inheritanc
 
-### EX00
+#### EX00
 
-### EX01
+#### EX01
