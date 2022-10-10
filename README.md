@@ -14,7 +14,11 @@ CPP piscine from 42 school
 #### EX00 
 #### EX01
 #### EX02
-#### EX03
+#### EX03 - Inicialization List
+links:
+
+	https://www.youtube.com/watch?v=1nfuYMXjZsA
+
 #### EX04
 #### EX05
 #### EX06 - Switch Case
@@ -78,3 +82,7 @@ Links:
 #### EX00
 
 #### EX01
+
+links:
+
+	https://www.youtube.com/watch?v=X8nYM8wdNRE
