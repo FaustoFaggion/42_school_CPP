@@ -33,7 +33,8 @@ links:
 links: 
     
     https://www.youtube.com/watch?v=LXF-wcoeT0o
-- Computerphile:
+
+Computerphile:
     
 	https://www.youtube.com/watch?v=PZRI1IfStY0
     
