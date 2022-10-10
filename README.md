@@ -36,7 +36,8 @@ links:
 - Computerphile:
     
 	https://www.youtube.com/watch?v=PZRI1IfStY0
-    https://www.youtube.com/watch?v=f4ekifyijIg
+    
+	https://www.youtube.com/watch?v=f4ekifyijIg
 - Const in C++
     https://www.youtube.com/watch?v=4fJBrditnJU
 - Static
