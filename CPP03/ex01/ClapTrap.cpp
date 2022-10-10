@@ -4,23 +4,23 @@ ClapTrap::ClapTrap(void) {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name) {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
-	std::cout << "Constructor " << *this << " called" << std::endl;
+	std::cout << "ClpaTrap constructor " << this->getName() << " called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src){
-	std::cout << "Copy Constructor " << *this << " called" << std::endl;
+	std::cout << "ClapTrap copy Constructor " << this->getName() << " called" << std::endl;
 	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
-	std::cout << "Copy assignment operator called\n";
+	std::cout << "ClapTrap copy assignment operator called\n";
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->energyPoints = rhs.energyPoints;
@@ -29,7 +29,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Destructor " << *this << " called" << std::endl;
+	std::cout << "ClapTrap destructor " << this->getName() << " called" << std::endl;
 }
 
 std::string	ClapTrap::getName() {
@@ -97,9 +97,10 @@ void	ClapTrap::berepaired(unsigned int amount) {
 }
 
 std::ostream&	operator << (std::ostream& lhs, ClapTrap& rhs) {
-	lhs << rhs.getName() << " hitPoints: " << rhs.getHitPoints() <<
-		" energyPoints: " << rhs.getEnergyPoints() << " attackDamage: " <<
-		rhs.getAttackDamage() << std::endl;
+	lhs << " " << rhs.getName() << std::endl;
+	lhs << "	" << " hitPoints: " << rhs.getHitPoints() << std::endl;
+	lhs << "	" <<	" energyPoints: " << rhs.getEnergyPoints() << std::endl;
+	lhs << "	" << " attackDamage: " <<	rhs.getAttackDamage() << std::endl;
 
 	return (lhs);
 }
