@@ -70,6 +70,8 @@ Links:
 
 	https://www.youtube.com/watch?v=HYAgJN3x4GA
 
+	https://www.youtube.com/watch?v=ntjM9YZP0qk
+
 ## CPP03
 ### Inheritanc
 
