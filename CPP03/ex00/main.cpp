@@ -10,7 +10,7 @@ int main (void) {
 	std::cout << a << std::endl;
 	a.takeDamage(6);
 	std::cout << a << std::endl;
-	a.berepaired(6);
+	a.berepaired(8);
 	std::cout << a << std::endl;
 	return (0);
 }
