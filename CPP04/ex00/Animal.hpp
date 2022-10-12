@@ -26,21 +26,4 @@ class Animal {
 
 std::ostream&	operator<<(std::ostream &lhs, Animal &rhs);
 
-/*
-class Dog : public Animal {
-
-	public:
-		Dog();
-		Dog(Dog const &rsc);
-		~Dog();
-};
-
-class Cat : public Animal {
-
-	public:
-		Cat();
-		Cat(Cat const &rsc);
-		~Cat();
-};
-*/
 #endif

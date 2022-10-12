@@ -9,12 +9,16 @@ SRC			=	main.cpp\
 				Animal.cpp\
 				Cat.cpp\
 				Dog.cpp\
+				WrongAnimal.cpp\
+				WrongCat.cpp\
 
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	Animal.hpp\
 				Cat.hpp\
 				Dog.hpp\
+				WrongAnimal.hpp\
+				WrongCat.hpp\
 
 all:	$(NAME)
 
