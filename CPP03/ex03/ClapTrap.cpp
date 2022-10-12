@@ -34,19 +34,19 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << "Destructor " << this->getName()  << " called" << std::endl;
 }
 
-std::string	ClapTrap::getName() {
+std::string const	&ClapTrap::getName() const {
 	return (this->name);
 }
 
-int	ClapTrap::getHitPoints() {
+int const	&ClapTrap::getHitPoints() const {
 	return (this->hitPoints);
 }
 
-int	ClapTrap::getEnergyPoints() {
+int const	&ClapTrap::getEnergyPoints() const {
 	return (this->energyPoints);
 }
 
-int	ClapTrap::getAttackDamage() {
+int const	&ClapTrap::getAttackDamage() const {
 	return (this->attackDamage);
 }
 

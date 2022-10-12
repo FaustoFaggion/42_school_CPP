@@ -1,13 +1,24 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	std::cout << "ScavTrap constructor called!!" << std::endl;
+ScavTrap::ScavTrap(void) : ClapTrap() {
+	
+	setName("ScavTrap");
 	setHitPoints(100);
 	setEnergyPoints(50);
 	setAttackDamage(20);
+	std::cout << "ScavTrap default constructor called!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& src): ClapTrap(src) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
+	std::cout << "ScavTrap constructor called!!" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap& src) : ClapTrap() {
+	*this = src;
 	std::cout << "ScavTrap copy Constructor " << this->getName() << " called" << std::endl;
 }
 
@@ -15,12 +26,23 @@ ScavTrap::~ScavTrap(void) {
 	std::cout << "ScavTrap destructor called!!" << std::endl;
 }
 
+ScavTrap &ScavTrap::operator=(ScavTrap &rhs) {
+
+	this->name = rhs.getName();
+	this->hitPoints = rhs.getHitPoints();
+	this->energyPoints = rhs.getEnergyPoints();
+	this->attackDamage = getAttackDamage();
+	return (*this);
+}
+
 void	ScavTrap::attack(const std::string& target) {
 	
-	if (this->getHitPoints() > 0 && this->getEnergyPoints() > 0) {
+	if (hitPoints > 0 && energyPoints > 0) {
 		std::cout << "ScavTrap " << this->getName() << " attacks " << target <<
-			" causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-		this->setEnergyPoints(this->getEnergyPoints() - 1);
+			" causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints--;
+		if (this->energyPoints < 0)
+			this->energyPoints = 0;
 	}
 	else {
 		std::cout << "Can't do anything!" << std::endl;
@@ -28,5 +50,12 @@ void	ScavTrap::attack(const std::string& target) {
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << "Gate keeper mode on!!" << std::endl;
+	
+	if (hitPoints > 0 && energyPoints > 0) {
+		std::cout << "Gate keeper mode on!!" << std::endl;
+	}
+	else {
+		std::cout << "Can't do anything!" << std::endl;
+	}
+
 }

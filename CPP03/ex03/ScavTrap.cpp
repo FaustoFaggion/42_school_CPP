@@ -9,7 +9,7 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
 	std::cout << "ScavTrap default constructor called!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string const name) : ClapTrap(name) {
 	
 	setHitPoints(100);
 	setEnergyPoints(50);
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap constructor called!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap& src) : ClapTrap() {
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap() {
 	*this = src;
 	std::cout << "ScavTrap copy Constructor " << this->getName() << " called" << std::endl;
 }
@@ -26,7 +26,7 @@ ScavTrap::~ScavTrap(void) {
 	std::cout << "ScavTrap destructor called!!" << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap &rhs) {
+ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 
 	this->name = rhs.getName();
 	this->hitPoints = rhs.getHitPoints();
@@ -35,7 +35,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap &rhs) {
 	return (*this);
 }
 
-void	ScavTrap::attack(const std::string& target) {
+void	ScavTrap::attack(std::string const &target) {
 	
 	if (hitPoints > 0 && energyPoints > 0) {
 		std::cout << "ScavTrap " << this->getName() << " attacks " << target <<

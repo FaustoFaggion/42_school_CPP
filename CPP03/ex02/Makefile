@@ -1,4 +1,4 @@
-NAME		=	scav_trap
+NAME		=	frag_trap
 
 CC			=	c++
 
@@ -9,11 +9,13 @@ PATH_OBJ	=	./obj/
 SRC			=	main.cpp\
 				ClapTrap.cpp\
 				ScavTrap.cpp\
+				FragTrap.cpp\
 
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	ClapTrap.hpp\
 				ScavTrap.hpp\
+				FragTrap.hpp\
 
 all:	$(NAME)
 

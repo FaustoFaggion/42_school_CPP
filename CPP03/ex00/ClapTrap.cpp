@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(void) :	name("ClapTrap"),
 	std::cout << "Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name):	name(name),
+ClapTrap::ClapTrap(std::string const name):	name(name),
 										hitPoints(10),
 										energyPoints(10),
 										attackDamage(0)

@@ -21,10 +21,10 @@ class ClapTrap {
 
 		ClapTrap& operator=(ClapTrap const &rhs);
 		
-		virtual std::string	getName();
-		int					getHitPoints();
-		int					getEnergyPoints();
-		int					getAttackDamage();
+		virtual std::string const	&getName() const;
+		int const					&getHitPoints() const;
+		int const					&getEnergyPoints() const;
+		int const					&getAttackDamage() const;
 		void				setName(std::string name);
 		void				setHitPoints(int hitPoints);
 		void				setEnergyPoints(int energyPoints);

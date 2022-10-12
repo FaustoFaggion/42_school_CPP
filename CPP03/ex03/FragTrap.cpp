@@ -9,7 +9,7 @@ FragTrap::FragTrap(): ClapTrap() {
 	std::cout << "FragTrap default constructor called!!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+FragTrap::FragTrap(std::string const name) : ClapTrap(name) {
 	
 	setHitPoints(100);
 	setEnergyPoints(100);
@@ -17,7 +17,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap constructor called!!" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap& src) : ClapTrap() {
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap() {
 	*this = src;
 	std::cout << "FragTrap copy Constructor " << this->getName() << " called" << std::endl;
 }
@@ -26,7 +26,7 @@ FragTrap::~FragTrap() {
 	std::cout << "FragTrap destructor called!!" << std::endl;
 }
 
-FragTrap &FragTrap::operator=(FragTrap &rhs) {
+FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 
 	this->name = rhs.getName();
 	this->hitPoints = rhs.getHitPoints();

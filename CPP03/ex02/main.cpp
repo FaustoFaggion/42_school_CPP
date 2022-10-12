@@ -1,3 +1,4 @@
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main (void) {
@@ -22,6 +23,17 @@ int main (void) {
 	std::cout << c << std::endl;
 	c.berepaired(6);
 	std::cout << c << std::endl;
+
+	FragTrap	d("Frag");
+
+	std::cout << d << std::endl;
+	d.attack(c.getName());
+	std::cout << d << std::endl;
+	d.takeDamage(6);
+	std::cout << d << std::endl;
+	d.berepaired(6);
+	std::cout << d << std::endl;
+	d.highFiveGuys();
 
 	return (0);
 }
