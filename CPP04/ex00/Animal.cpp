@@ -1,17 +1,20 @@
 #include "Animal.hpp"
 
 Animal::Animal() {
+	std::cout << "Animal standard constructor called!!" << std::endl;
 }
 
 Animal::Animal(std::string const type) : type(type) {
-
+	std::cout << "Animal constructor called!!" << std::endl;
 }
 
 Animal::Animal(Animal const &rsc) {
+	std::cout << "Animal copy constructor called!!" << std::endl;
 	*this = rsc;
 }
 
 Animal::~Animal() {
+	std::cout << "Animal destructor called!!" << std::endl;
 }
 
 Animal&	Animal::operator=(Animal const &rhs) {

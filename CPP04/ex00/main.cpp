@@ -24,6 +24,12 @@ int main (void) {
 	planta->makeSound();
 	pantera->makeSound();
 
+	delete vaca;
+	delete mimi;
+	delete toto;
+	delete planta;
+	delete pantera;
+	
 	return (0);
 }
 

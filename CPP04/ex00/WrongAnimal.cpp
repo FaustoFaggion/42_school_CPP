@@ -1,17 +1,20 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() {
+	std::cout << "Wrong Animal default constructor called!!" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string const type) : type(type) {
-
+	std::cout << "Wrong Animal constructor called!!" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &rsc) {
+	std::cout << "Wrong Animal copy constructor called!!" << std::endl;
 	*this = rsc;
 }
 
 WrongAnimal::~WrongAnimal() {
+	std::cout << "Wrong Animal destructor called!!" << std::endl;
 }
 
 WrongAnimal&	WrongAnimal::operator=(WrongAnimal const &rhs) {
