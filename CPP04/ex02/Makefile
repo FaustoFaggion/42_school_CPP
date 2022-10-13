@@ -6,7 +6,7 @@ FLAGS		=	-Wall -Wextra -Werror -g3
 PATH_OBJ	=	./obj/
 
 SRC			=	main.cpp\
-				Animal.cpp\
+				AAnimal.cpp\
 				Cat.cpp\
 				Dog.cpp\
 				WrongAnimal.cpp\
@@ -15,7 +15,7 @@ SRC			=	main.cpp\
 
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
-HEADER		=	Animal.hpp\
+HEADER		=	AAnimal.hpp\
 				Cat.hpp\
 				Dog.hpp\
 				WrongAnimal.hpp\

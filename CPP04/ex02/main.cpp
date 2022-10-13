@@ -5,7 +5,7 @@
 
 int    main(void) {
 
-	Animal	*animals[10];
+	AAnimal	*animals[10];
 	Cat		cat;
     Cat		clone = cat;
 

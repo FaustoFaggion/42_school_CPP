@@ -1,11 +1,11 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"){
+Cat::Cat() : AAnimal("Cat"){
 	std::cout << "Cat constructor called!!" << std::endl;
 	this->brain = new Brain();
 }
 
-Cat::Cat(Cat const &rsc) : Animal(){
+Cat::Cat(Cat const &rsc) : AAnimal(){
 	std::cout << "Cat copy constructor called!!" << std::endl;
 	this->brain = new Brain();
 	*this = rsc;
