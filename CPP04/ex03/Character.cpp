@@ -29,7 +29,6 @@ Character::~Character() {
 
 	for(int i = 0; i < 4; i++) {
 		if (this->inventory[i] != NULL) {
-			std::cout << "OOOOOO" << std::endl;
 			delete this->inventory[i];
 		}
 	}

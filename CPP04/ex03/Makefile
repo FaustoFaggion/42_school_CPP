@@ -11,7 +11,9 @@ SRC			=	main.cpp\
 				Cure.cpp\
 				ICharacter.cpp\
 				Character.cpp\
-
+				MateriaSource.cpp\
+				IMateriaSource.cpp\
+				
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	AMateria.hpp\
@@ -19,6 +21,8 @@ HEADER		=	AMateria.hpp\
 				Cure.hpp\
 				ICharacter.hpp\
 				Character.hpp\
+				MateriaSource.hpp\
+				IMateriaSource.hpp\
 				
 all:	$(NAME)
 

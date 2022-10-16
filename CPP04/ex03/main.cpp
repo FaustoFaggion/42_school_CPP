@@ -1,8 +1,14 @@
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "MateriaSource.hpp"
 
 int main(void) {
+
+	IMateriaSource	*src = new MateriaSource();
+	src->learnMateria(new Ice());
+
+	delete src;
 
 	Character	player1("Nanda");
 	Character	player2("Fê");
