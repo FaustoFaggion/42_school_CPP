@@ -7,6 +7,11 @@ MateriaSource::MateriaSource() {
 	}
 }
 
+MateriaSource::MateriaSource(MateriaSource const &rsc) {
+	*this = rsc;
+}
+
+
 MateriaSource::~MateriaSource() {
 	std::cout << "MateriaSource destructor called" << std::endl;
 
@@ -17,6 +22,10 @@ MateriaSource::~MateriaSource() {
 		}
 	}
 
+}
+
+AMateria	*MateriaSource::getSource(int i) const {
+	return (this->source[i]);
 }
 
 void	MateriaSource::learnMateria(AMateria* materia) {
@@ -41,9 +50,10 @@ AMateria	*MateriaSource::createMateria(std::string const &type) {
 	return (0);
 }
 
-/*
-std::ostream	&operator<<(std::ostream &lhs, MateriaSource &rhs) {
-
-	return (lhs);
+MateriaSource	&MateriaSource::operator=(MateriaSource const &rsc) {
+	for (int i = 0; i < 4; i++) {
+		this->source[i] = rsc.getSource(i);
+	}
+	return (*this);
 }
-*/
+

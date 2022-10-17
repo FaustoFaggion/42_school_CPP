@@ -10,6 +10,13 @@ int main(void) {
 	IMateriaSource	*src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+
+	std::cout << "________Intanciation2________\n" <<std::endl;
+
+	IMateriaSource *src2 = src;
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Cure());
+
 	
 	ICharacter	*me = new Character("me");
 	ICharacter	*sister = new Character("sister");
