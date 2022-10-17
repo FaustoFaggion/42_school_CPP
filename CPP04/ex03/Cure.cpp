@@ -19,6 +19,7 @@ Cure const	&Cure::operator=(Cure const &rhs) {
 }
 
 Cure	*Cure::clone() const {
+	std::cout << "clone cure called!!" << std::endl;
 	return (new Cure());
 }
 

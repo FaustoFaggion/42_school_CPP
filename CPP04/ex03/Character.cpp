@@ -29,10 +29,16 @@ Character::~Character() {
 
 	for(int i = 0; i < 4; i++) {
 		if (this->inventory[i] != NULL) {
+			std::cout << "inventory destructor called at " << i << std::endl;
 			delete this->inventory[i];
 		}
 	}
-
+	for(int i = 0; i < 4; i++) {
+		if (this->leftOnTheFloor[i] != NULL) {
+			std::cout << "inventory destructor called at " << i << std::endl;
+			delete this->leftOnTheFloor[i];
+		}
+	}
 }
 
 Character const	&Character::operator=(Character const &rsc) {
@@ -54,22 +60,24 @@ std::string const &Character::getName() const {
 void	Character::equip(AMateria *m) {
 	for(int i = 0; i < 4; i++){
 		if (this->inventory[i] == NULL) {
+			std::cout << "equip inventory called at " << i << std::endl;
 			this->inventory[i] = m;
-			break;
+			break ;
 		}
 	}
 }
-/*
+
 void	Character::unequip(int idx) {
 	for (int i = 0; i < 50; i++) {
 		if (this->leftOnTheFloor[i] == NULL){
+			std::cout << "unequip inventory called at " << i << std::endl;
 			this->leftOnTheFloor[i] = this->inventory[idx];
 			break;
 		}
 	}
 	this->inventory[idx] = NULL;
 }
-*/
+
 void	Character::use(int idx, ICharacter &target) {
 	this->inventory[idx]->use(target);
 }

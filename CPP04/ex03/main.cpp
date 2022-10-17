@@ -5,40 +5,38 @@
 
 int main(void) {
 
+	std::cout << "________Intanciation________\n" <<std::endl;
+	
 	IMateriaSource	*src = new MateriaSource();
 	src->learnMateria(new Ice());
-
-	delete src;
-
-	Character	player1("Nanda");
-	Character	player2("Fê");
-	Ice			ice;
-	Ice			*iceCopy = ice.clone();
-
-	std::cout << "________Intanciation________\n" <<std::endl;
-	std::cout << ice <<std::endl;
-	std::cout << player1 <<std::endl;
-	std::cout << player2 <<std::endl;
+	src->learnMateria(new Cure());
+	
+	ICharacter	*me = new Character("me");
+	ICharacter	*sister = new Character("sister");
 
 	std::cout << "\n________COPY________\n" <<std::endl;
-
-	std::cout << "\n________EQUIP________\n" <<std::endl;
-
-	player1.equip(iceCopy);
-	player1.equip(new Cure());
-	player1.equip(new Ice());
-	player1.use(0, player2);
-	player1.use(1, player2);
+	AMateria	* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	
+	std::cout << "\n________USE________\n" <<std::endl;
+	me->use(0, *sister);
+	me->use(1, *sister);
 
 	std::cout << "\n________UNEQUIP________\n" <<std::endl;
 	
-//	player1.unequip(1);
-//	player1.equip(new Ice());
-//	player1.use(0, player2);
-//	player1.use(1, player2);
+	me->unequip(0);
+	me->unequip(1);
 
 	std::cout << "\n________Destructor________\n" <<std::endl;
 
-
+	delete me;
+	delete sister;
+	delete src;
+	
 	return (0);
 }

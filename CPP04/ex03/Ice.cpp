@@ -1,7 +1,7 @@
 #include "Ice.hpp"
 
 Ice::Ice() : AMateria("ice"){
-	std::cout << "Ice constructor called" << std::endl;
+	std::cout << "Ice default constructor called" << std::endl;
 }
 Ice::Ice(Ice const &rsc): AMateria() {
 	std::cout << "Ice copy constructor called" << std::endl;
@@ -19,6 +19,7 @@ Ice::~Ice() {
 }
 
 Ice *Ice::clone() const {
+	std::cout << "clone ice called!!" << std::endl;
 	return (new Ice());
 }
 
