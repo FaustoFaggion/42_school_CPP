@@ -17,20 +17,20 @@ class Bureaucrat {
 		~Bureaucrat();
 
 		std::string const	&getName() const;
-		int const	&getGrade() const;
+		int const			&getGrade() const;
 
-		void	increment();
-		void	decrement();
+		void				increment();
+		void				decrement();
 
 		class	GradeTooHighException : public std::exception {
-			const char	*what() const throw();
+			const char		*what() const throw();
 		};
 		
 		class	GradeTooLowException : public std::exception {
-			const char	*what() const throw();
+			const char		*what() const throw();
 		};
 
-		Bureaucrat	const &operator=(Bureaucrat const &rsc);
+		Bureaucrat	const 	&operator=(Bureaucrat const &rsc);
 };
 
 std::ostream	&operator<<(std::ostream &lhs, Bureaucrat &rhs);

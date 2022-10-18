@@ -29,11 +29,15 @@ int const	&Bureaucrat::getGrade() const{
 }
 
 void	Bureaucrat::increment() {
-
+	if (this->getGrade() == 1)
+		throw GradeTooHighException();
+	this->_grade--;
 }
 
 void	Bureaucrat::decrement() {
-
+	if (this->getGrade() == 150)
+		throw GradeTooLowException();
+	this->_grade++;
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw() {
