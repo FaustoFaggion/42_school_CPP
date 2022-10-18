@@ -18,7 +18,7 @@ int	main(void) {
 	try {
 		soLove = new Bureaucrat("Gi", 1);
 		std::cout << *soLove << std::endl;
-		form = new Form("form", 2);
+		form = new Form("form", 2, 45);
 		std::cout << *form << std::endl;
 		form->beSigned(*soLove);
 		std::cout << *form << std::endl;
@@ -33,7 +33,7 @@ int	main(void) {
 	try {
 		soLove = new Bureaucrat("Gi", 3);
 		std::cout << *soLove << std::endl;
-		form = new Form("form", 1);
+		form = new Form("form", 1, 56);
 		std::cout << *form << std::endl;
 		form->beSigned(*soLove);
 		std::cout << *form << std::endl;
@@ -48,7 +48,7 @@ int	main(void) {
 	try {
 		soLove = new Bureaucrat("Gi", 3);
 		std::cout << *soLove << std::endl;
-		form = new Form("form", 0);
+		form = new Form("form", 0, 87);
 		std::cout << *form << std::endl;
 		form->beSigned(*soLove);
 		std::cout << *form << std::endl;
