@@ -4,6 +4,10 @@
 #include <iostream>
 #include <string.h>
 #include <exception>
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -21,11 +25,12 @@ class Bureaucrat {
 
 		void				increment();
 		void				decrement();
+		void				signForm(Form &form, bool b) const;
 
 		class	GradeTooHighException : public std::exception {
 			const char		*what() const throw();
 		};
-		
+
 		class	GradeTooLowException : public std::exception {
 			const char		*what() const throw();
 		};

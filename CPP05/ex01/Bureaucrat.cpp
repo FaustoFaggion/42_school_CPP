@@ -17,7 +17,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const &rsc) {
 }
 
 Bureaucrat::~Bureaucrat() {
-
 }
 
 std::string const	&Bureaucrat::getName() const {
@@ -38,6 +37,14 @@ void	Bureaucrat::decrement() {
 	if (this->getGrade() == 150)
 		throw GradeTooLowException();
 	this->_grade++;
+}
+
+void	Bureaucrat::signForm(Form &form, bool b) const {
+	if (b == false)
+		std::cout << this->getName() << "couldn't sign " << form.getName() << std::endl;
+	else {
+		std::cout << this->getName() << " sign " << form.getName() << std::endl;
+	}
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw() {

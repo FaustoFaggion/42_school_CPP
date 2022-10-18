@@ -45,8 +45,14 @@ const char	*Form::GradeTooHighException::what() const throw() {
 }
 
 void	Form::beSigned(Bureaucrat const &responsable) {
-	if (responsable.getGrade() <= this->getGrade())
+
+	if (responsable.getGrade() <= this->getGrade()) {
 		this->setSign(true);
+		responsable.signForm(*this, true);
+	}
+	else {
+		throw GradeTooLowException();
+	}
 }
 
 Form const	&Form::operator=(Form const &rsc) {
