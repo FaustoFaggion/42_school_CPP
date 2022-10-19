@@ -7,16 +7,19 @@ PATH_OBJ	=	./obj/
 
 SRC			=	main.cpp\
 				Bureaucrat.cpp\
-				AForm.cpp\
+				Form.cpp\
 				ShrubberyCreationForm.cpp\
 				RobotomyRequestForm.cpp\
+				PresidentialPardonForm.cpp\
+
 
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	Bureaucrat.hpp\
-				AForm.hpp\
+				Form.hpp\
 				ShrubberyCreationForm.hpp\
 				RobotomyRequestForm.hpp\
+				PresidentialPardonForm.hpp\
 
 all:	$(NAME)
 

@@ -1,40 +1,33 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm() : Form() {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	AForm(target, 145),
-																	_gradeExec(137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	Form("shrubbery", 145, 137) {
+	this->_target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) : Form() {
 	*this = rsc;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-int const	&ShrubberyCreationForm::getGradeExec() const {
-	return (this->_gradeExec);
+std::string	const &ShrubberyCreationForm::getTarget() const {
+	return (this->_target);
 }
 
 const char *ShrubberyCreationForm::FileFailOpenException::what() const throw() {
 	return ("file didn't open!!");
 };
 
-ShrubberyCreationForm const	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rsc) {
-	this->setName(rsc.getName());
-	this->setSign(rsc.getSign());
-	this->_gradeExec = rsc.getGrade();
-	return (*this);
-}
-
-void	ShrubberyCreationForm::createFile() {
+void	ShrubberyCreationForm::createFile(std::string target) {
 	std::fstream	writeFile;
 	std::fstream	readFile;
 	std::string		fileName;
 
-	fileName = this->getName() + "_shrubbery";
+	fileName = target + "_shrubbery";
 
 	writeFile.open (fileName, std::fstream::in | std::fstream::out | std::fstream::trunc);
 	if (writeFile.fail()){
@@ -50,4 +43,9 @@ void	ShrubberyCreationForm::createFile() {
 	writeFile << readFile.rdbuf();
 	readFile.close();
 	writeFile.close();
+}
+
+ShrubberyCreationForm const	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rsc) {
+	this->_target = rsc.getTarget();
+	return (*this);
 }

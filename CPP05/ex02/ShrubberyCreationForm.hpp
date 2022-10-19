@@ -1,30 +1,29 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include "AForm.hpp"
+#include "Form.hpp"
 #include <fstream>
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public Form {
 
 	private:
-		int	_gradeExec;
+		std::string	_target;
+		ShrubberyCreationForm();
 
 	public:
-		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm &rsc);
 		~ShrubberyCreationForm();
-
-		int const					&getGradeExec() const;
 		
-		void						createFile();
+		std::string	const	&getTarget() const;
+
+		void				createFile(std::string target);
 
 		class FileFailOpenException : public std::exception {
 			const char *what() const throw();
 		};
-		
-		ShrubberyCreationForm const	&operator=(ShrubberyCreationForm const &rsc);
 
+		ShrubberyCreationForm const	&operator=(ShrubberyCreationForm const &rsc);
 };
 
 #endif

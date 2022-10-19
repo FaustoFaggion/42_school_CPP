@@ -39,11 +39,16 @@ void	Bureaucrat::decrement() {
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm &form, bool b) const {
-	if (b == false)
-		std::cout << this->getName() << "couldn't sign " << form.getName() << std::endl;
-	else {
-		std::cout << this->getName() << " sign " << form.getName() << std::endl;
+void	Bureaucrat::signForm(Form &form) const {
+	
+	try {
+		form.execute(*this);
+		form.beSigned(*this);
+		std::cout << this->getName() << " sign " << form.getName() << "!!!" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+		std::cout << this->getName() << " couldn't sign " << form.getName() << "!!!" << std::endl;
 	}
 }
 

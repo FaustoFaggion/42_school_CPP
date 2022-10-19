@@ -5,17 +5,18 @@
 #include <string.h>
 #include <exception>
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class AForm;
+class Form;
 
 class Bureaucrat {
 
 	protected:
 		std::string _name;
 		int			_grade;
-	public:
 		Bureaucrat();
+	
+	public:
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const &rsc);
 		~Bureaucrat();
@@ -25,7 +26,7 @@ class Bureaucrat {
 
 		void				increment();
 		void				decrement();
-		void				signForm(AForm &form, bool b) const;
+		void				signForm(Form &form) const;
 
 		class	GradeTooHighException : public std::exception {
 			const char		*what() const throw();

@@ -3,20 +3,25 @@
 
 #include <iostream>
 #include <string.h>
-#include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
+#include "Form.hpp"
 
-class RobotomyRequestForm : AForm() {
+class RobotomyRequestForm : public Form {
 	private:
-		int	_gradeExec;
+		std::string	_target;
+		RobotomyRequestForm();
 	
 	public:
-		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(RobotomyRequestForm const &rsc);
+		RobotomyRequestForm(RobotomyRequestForm &rsc);
 		~RobotomyRequestForm();
 
-		int const	&getGrade() const;
-		
+		std::string	const			&getTarget() const;
+
+		void						executeRandon(std::string target);
+
+		RobotomyRequestForm const	&operator=(RobotomyRequestForm const &rsc);
 };
 
 #endif
