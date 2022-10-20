@@ -20,6 +20,7 @@ class RobotomyRequestForm : public Form {
 		std::string	const			&getTarget() const;
 
 		void						executeRandon(std::string target);
+		void						execute(Bureaucrat const &executor) const;
 
 		RobotomyRequestForm const	&operator=(RobotomyRequestForm const &rsc);
 };

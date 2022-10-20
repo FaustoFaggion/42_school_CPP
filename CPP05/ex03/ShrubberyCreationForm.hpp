@@ -17,7 +17,8 @@ class ShrubberyCreationForm : public Form {
 		
 		std::string	const	&getTarget() const;
 
-		void				createFile(std::string target);
+		void				createFile(std::string const target);
+		void				execute(Bureaucrat const &executor) const;
 
 		class FileFailOpenException : public std::exception {
 			const char *what() const throw();

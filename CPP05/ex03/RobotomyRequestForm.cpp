@@ -24,10 +24,35 @@ void	RobotomyRequestForm::executeRandon(std::string target) {
 
 	n = rand() % 2;
 
-	if (n % 2 == 0)
+	if (n % 2 == 0) {
+		std::cout << "drilling noise!!!" << std::endl;
 		std::cout << target << " has been robotomized successfully!!!" << std::endl;
-	else
+	}
+	else {
+		std::cout << "drilling noise!!!" << std::endl;
 		std::cout << "robotomy failed!!!" << std::endl;
+	}
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() > this->getGradeExec() )
+		throw GradeTooLowException();
+	else if (this->getSign() == true)
+		throw AlreadySignedException();
+	else  {
+		int	n;
+		srand(time(0));
+
+		n = rand() % 2;
+		if (n % 2 == 0) {
+			std::cout << "drilling noise!!!" << std::endl;
+			std::cout << this->_target << " has been robotomized successfully!!!" << std::endl;
+		}
+		else {
+			std::cout << "drilling noise!!!" << std::endl;
+			std::cout << "robotomy failed!!!" << std::endl;
+		}
+	}
 }
 
 RobotomyRequestForm const	&RobotomyRequestForm::operator=(RobotomyRequestForm const &rsc) {

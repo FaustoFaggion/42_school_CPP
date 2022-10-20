@@ -18,6 +18,7 @@ class PresidentialPardonForm : public Form {
 		std::string	const				&getTarget() const;
 
 		void							exec(std::string target);
+		void							execute(Bureaucrat const &executor) const;
 
 		PresidentialPardonForm const	&operator=(PresidentialPardonForm const &rsc);
 };

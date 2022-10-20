@@ -8,7 +8,7 @@
 class Intern {
 
 	public:
-		Form	*makeForm(std::string name, std::string target);
+		Form	*makeForm(const std::string name, std::string target);
 
 
 };

@@ -54,17 +54,12 @@ void	Form::beSigned(Bureaucrat const &responsable) {
 	if (responsable.getGrade() > this->getGradeSign()) {
 		throw GradeTooLowException();
 	}
+	else if (this->getSign() == true)
+		throw AlreadySignedException();
 	else {
 		this->setSign(true);
 	}
 
-}
-
-void	Form::execute(Bureaucrat const &executor) const {
-	if (this->getGradeExec() < executor.getGrade())
-		throw GradeTooLowException();
-	if (this->getSign() == true)
-		throw AlreadySignedException();
 }
 
 const char	*Form::GradeTooLowException::what() const throw() {
@@ -86,7 +81,8 @@ Form const	&Form::operator=(Form const &rsc) {
 
 std::ostream	&operator<<(std::ostream &lhs, Form &rhs) {
 	lhs << "AForm name: " <<rhs.getName() << std::endl;
-	lhs << "Grade required: " << rhs.getGradeSign() << std::endl;
+	lhs << "Grade sign required: " << rhs.getGradeSign() << std::endl;
+	lhs << "Grade exec required: " << rhs.getGradeExec() << std::endl;
 	lhs << "Signed? " << rhs.getSign() << std::endl;
 
 	return (lhs);
