@@ -15,7 +15,6 @@ Form	*Intern::makeForm(const std::string name, std::string target) {
 	for (int i = 0; i < 3; i++) {
 		if (names[i].compare(name) == 0) {
 			opt = i;
-			std::cout << "i: " << i << std::endl;
 			break;
 		}
 	}
