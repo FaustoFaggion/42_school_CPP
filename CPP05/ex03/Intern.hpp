@@ -10,6 +10,9 @@ class Intern {
 	public:
 		Form	*makeForm(const std::string name, std::string target);
 
+	class FormDoesNotExistException : public std::exception {
+			const char *what() const throw();
+	};
 
 };
 

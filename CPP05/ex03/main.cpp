@@ -7,12 +7,12 @@ int	main(void) {
 
 	Bureaucrat	*soLove;
 	Intern		someIntern;
-	Form		*form;
+	Form		*form = NULL;
 
 	std::cout << "\n-------------Sign Shrubbery---------------\n" << std::endl;
 	try {
 		soLove = new Bureaucrat("Giovana", 1);
-		form = someIntern.makeForm ("shrubber creation", "home");
+		form = someIntern.makeForm ("shr creation", "home");
 		std::cout << "\n------------Try to execute----------\n" << std::endl;
 		soLove->executeForm(*form);
 		std::cout << "\n------------Sign a form----------\n" << std::endl;
@@ -32,7 +32,7 @@ int	main(void) {
 		if (form != NULL)
 			delete form;
 	}
-/*
+
 	std::cout << "\n-------------Sign Robotomy---------------\n" << std::endl;
 	try {
 		soLove = new Bureaucrat("Giovana", 1);
@@ -84,7 +84,7 @@ int	main(void) {
 	std::cout << "\n-------------Shrubbery Bureaucrat too low---------------\n" << std::endl;
 	try {
 		soLove = new Bureaucrat("Giovana", 150);
-		form = someIntern.makeForm ("shrubbery", "home");
+		form = someIntern.makeForm ("shrubbery creation", "home");
 		std::cout << "\n------------Sign a form----------\n" << std::endl;
 		soLove->signForm(*form);
 		std::cout << "\n------------Try to sign again----------\n" << std::endl;
@@ -104,7 +104,7 @@ int	main(void) {
 	std::cout << "\n-------------Robotomy Bureaucrat too low---------------\n" << std::endl;
 	try {
 		soLove = new Bureaucrat("Giovana", 150);
-		form = someIntern.makeForm("robotomy", "home");
+		form = someIntern.makeForm("robotomy request", "home");
 		std::cout << "\n------------Sign a form----------\n" << std::endl;
 		soLove->signForm(*form);
 		std::cout << "\n------------Try to sign again----------\n" << std::endl;
@@ -124,7 +124,7 @@ int	main(void) {
 	std::cout << "\n-------------Presidential Bureaucrat too low---------------\n" << std::endl;
 	try {
 		soLove = new Bureaucrat("Giovana", 150);
-		form = someIntern.makeForm ("presidential", "home");
+		form = someIntern.makeForm ("presidential pardon", "home");
 		std::cout << "\n------------Sign a form----------\n" << std::endl;
 		soLove->signForm(*form);
 		std::cout << "\n------------Try to sign again----------\n" << std::endl;
@@ -140,6 +140,6 @@ int	main(void) {
 		if (form != NULL)
 			delete form;
 	}
-	*/
+
 	return (0);
 }
