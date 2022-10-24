@@ -10,13 +10,11 @@ class ConvertInt {
 	public:
 		ConvertInt();
 		ConvertInt(char c);
-		ConvertInt(long long int c);
+		ConvertInt(int c);
 		ConvertInt(float c);
 		ConvertInt(double c);
 		ConvertInt(ConvertInt &rsc);
 		~ConvertInt();
-
-	void	convert(void);
 
 	ConvertInt	&operator=(ConvertInt const &rsc);
 };		

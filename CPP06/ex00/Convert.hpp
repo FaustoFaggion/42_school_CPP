@@ -4,12 +4,14 @@
 #include "DetectType.hpp"
 #include "ConvertChar.hpp"
 #include "ConvertInt.hpp"
+#include "ConvertFloat.hpp"
+#include "ConvertDouble.hpp"
 
 class Convert : DetectType {
 
 	private:
+		long double		ld;
 		char			c;
-		long long int	ll;
 		int				i;
 		float			f;
 		double			d;
@@ -19,12 +21,11 @@ class Convert : DetectType {
 		Convert(Convert &rhs);
 		~Convert();
 
+		long double const	&getLd() const;
 		char const			&getC() const;
-		long long int const	&getLL() const;
 		int const			&getI() const;
 		float const			&getF() const;
-		double const			&getD() const;
-
+		double const		&getD() const;
 
 		Convert				&operator=(Convert const &rhs);
 };

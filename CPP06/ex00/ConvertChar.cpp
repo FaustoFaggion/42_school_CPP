@@ -19,9 +19,8 @@ ConvertChar::ConvertChar(int c) {
 }
 
 ConvertChar::ConvertChar(float c) {
-
 	std::cout << "char: ";
-	if (float(c / (int)c) == 1) {
+	if (c / (int)c == 1) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
 		else if ((c >= 33 && c <= 126) )
@@ -33,9 +32,9 @@ ConvertChar::ConvertChar(float c) {
 		std::cout << "conversion is impossible" << std::endl;
 }
 
-ConvertChar::ConvertChar(double c) {	
+ConvertChar::ConvertChar(double c) {
 	std::cout << "char: ";
-	if (float(c / (int)c) == 1) {
+	if (c / (int)c == 1) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
 		else if ((c >= 33 && c <= 126) )
@@ -43,8 +42,9 @@ ConvertChar::ConvertChar(double c) {
 		else
 			std::cout << "conversion is impossible" << std::endl;
 	}
-		else
-			std::cout << "conversion is impossible" << std::endl;
+	else
+		std::cout << "conversion is impossible" << std::endl;
+
 }
 
 ConvertChar::ConvertChar(ConvertChar &rsc){

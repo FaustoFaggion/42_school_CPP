@@ -10,6 +10,8 @@ SRC			=	main.cpp\
 				Convert.cpp\
 				ConvertChar.cpp\
 				ConvertInt.cpp\
+				ConvertFloat.cpp\
+				ConvertDouble.cpp\
 				
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
@@ -17,6 +19,8 @@ HEADER		=	DetectType.hpp\
 				Convert.hpp\
 				ConvertChar.hpp\
 				ConvertInt.hpp\
+				ConvertFloat.hpp\
+				ConvertDouble.hpp\
 
 all:	$(NAME)
 
