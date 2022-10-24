@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string.h>
+#include <stdint.h>
 
 class Data {
 private:

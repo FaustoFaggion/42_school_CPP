@@ -2,9 +2,9 @@
 
 int	main(void) {
 
-	Data	a("Joao e Raoni", 33);
+	Data		a("Joao e Raoni", 33);
 	uintptr_t	b;
-	Data	*c;
+	Data		*c;
 
 	b = serialize(&a);
 
