@@ -49,14 +49,17 @@ void	Harl::complain(std::string level){
             std::cout << "[ " << "DEBUG" << " ]" << std::endl;
             (this->*function[opt])();
             std::cout<< std::endl;
+			[[fallthrough]];
         case 1:
             std::cout << "[ " << "INFO" << " ]" << std::endl;
             (this->*function[opt])();
             std::cout<< std::endl;
+			[[fallthrough]];
         case 2:
             std::cout << "[ " << "WARNING" << " ]" << std::endl;
             (this->*function[opt])();
             std::cout<< std::endl;
+			[[fallthrough]];
         case 3:
             std::cout << "[ " << "ERROR" << " ]" << std::endl;
             (this->*function[opt])();
