@@ -10,8 +10,8 @@ Convert::Convert(const char * input) : DetectType(input) {
 	idx = verify();
 	if (idx == CHAR) {
 		this->c = input[0];
-		ConvertChar c(this->c);
-		ConvertInt i(this->c);
+		ConvertChar(this->c);
+		ConvertInt(this->c);
 		ConvertFloat(this->c);
 		ConvertDouble(this->c);
 	}
