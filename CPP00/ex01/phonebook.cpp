@@ -78,8 +78,8 @@ void	PhoneBook::addContact(std::string f_name, std::string l_name, std::string n
 		return ;
 	else if (nameValidation(n_name) == 0)
 		return ;
-//	else if (phoneValidation(phone) == 0)
-//		return ;
+	else if (phoneValidation(phone) == 0)
+		return ;
 	else if (secretValidation(secret) == 0)
 		return ;
 	else{

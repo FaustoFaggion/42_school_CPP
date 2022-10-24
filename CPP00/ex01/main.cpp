@@ -14,7 +14,7 @@ void	addCommand(PhoneBook &thePhonebook)
 	std::getline(std::cin, last_name);
 	std::cout << "Nick Name: " << std::endl;
 	std::getline(std::cin, nick_name);
-	std::cout << "Phone Number (00)0000-0000: " << std::endl;
+	std::cout << "Phone Number (00)00000-0000: " << std::endl;
 	std::getline(std::cin, phone_number);
 	std::cout << "Darkest Secret: " << std::endl;
 	std::getline(std::cin, darkest_secret);
