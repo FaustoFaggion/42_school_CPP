@@ -28,6 +28,9 @@ DetectType	&DetectType::operator=(DetectType const &rhs) {
 }
 
 int	DetectType::verify() {
+	if (this->getInput().compare("nan") == 0) {
+		return (NAN);
+	}
 	if (this->getInput().length() == 1 && std::isalpha(this->getInput()[0])) {
 		return (CHAR);
 	}

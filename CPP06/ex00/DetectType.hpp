@@ -29,7 +29,8 @@ class	DetectType {
 		INT,
 		FLOAT,
 		DOUBLE,
-		IMPOSSIBLE
+		IMPOSSIBLE,
+		NAN
 	};
 };
 

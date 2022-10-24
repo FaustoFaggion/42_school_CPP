@@ -50,6 +50,12 @@ Convert::Convert(const char * input) : DetectType(input) {
 		ConvertFloat(this->d);
 		ConvertDouble(this->d);
 	}
+	else if (idx == NAN) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
 	else if (idx == IMPOSSIBLE)
 		std::cout << "type conversion is impossible" << std::endl;
 }
