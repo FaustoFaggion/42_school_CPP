@@ -7,7 +7,7 @@
 #include "ConvertFloat.hpp"
 #include "ConvertDouble.hpp"
 
-class Convert : DetectType {
+class Convert : public DetectType {
 
 	private:
 		long double		ld;

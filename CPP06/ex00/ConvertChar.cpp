@@ -52,7 +52,6 @@ ConvertChar::ConvertChar(ConvertChar &rsc){
 }
 
 ConvertChar::~ConvertChar() {
-	std::cout << "char destructor" << std::endl;
 }
 
 ConvertChar	&ConvertChar::operator=(ConvertChar const &rsc) {

@@ -5,22 +5,22 @@ ConvertDouble::ConvertDouble() {
 
 ConvertDouble::ConvertDouble(char c) {
 	std::cout << "double: ";
-	printf("%.1f \n", static_cast<double>(c));
+	std::cout << static_cast<double>(c) << ".0" << std::endl;
 }
 
 ConvertDouble::ConvertDouble(int c) {
 	std::cout << "double: ";
-	printf("%.1f \n", static_cast<double>(c));
+	std::cout << static_cast<double>(c) << ".0" << std::endl;
 }
 
 ConvertDouble::ConvertDouble(float c) {
 	std::cout << "double: ";
-	printf("%.1f \n", static_cast<double>(c));
+	std::cout << static_cast<double>(c) << ".0" << std::endl;
 }
 
 ConvertDouble::ConvertDouble(double c) {	
 	std::cout << "double: ";
-	printf("%.1f \n", static_cast<double>(c));
+	std::cout << static_cast<double>(c) << ".0" << std::endl;
 }
 
 ConvertDouble::ConvertDouble(ConvertDouble &rsc){

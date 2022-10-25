@@ -16,9 +16,9 @@ Convert::Convert(const char * input) : DetectType(input) {
 		ConvertDouble(this->c);
 	}
 	else if (idx == INT) {
-		this->ld = std::stold(this->getInput(), NULL);
+		this->ld = std::strtold(this->getInput().c_str(), NULL);
 		if (this->ld >= -2147483648  && this->ld <= 2147483647)
-			this->i = std::stoi(this->getInput(), NULL);
+			this->i = std::atoi(this->getInput().c_str());
 		else
 			std::cout << "Invalid Argument" << std::endl;
 		ConvertChar(this->i);
@@ -27,9 +27,9 @@ Convert::Convert(const char * input) : DetectType(input) {
 		ConvertDouble(this->i);
 	}
 	else if (idx == FLOAT) {
-		this->ld = std::stold(this->getInput(), NULL);
+		this->ld = std::strtold(this->getInput().c_str(), NULL);
 		if (this->ld >= 1.17549e-038  && this->ld <= 3.40282e+038)
-			this->f = std::stof(this->getInput(), NULL);
+			this->f = std::strtof(this->getInput().c_str(), NULL);
 		else
 			std::cout << "Invalid Argument" << std::endl;
 		
@@ -39,9 +39,9 @@ Convert::Convert(const char * input) : DetectType(input) {
 		ConvertDouble(this->f);
 	}
 	else if (idx == DOUBLE) {
-		this->ld = std::stold(this->getInput(), NULL);
+		this->ld = std::strtold(this->getInput().c_str(), NULL);
 		if (this->ld >= 2.22507e-308  && this->ld <= 1.79769e+308)
-			this->d = std::stod(this->getInput(), NULL);
+			this->d = std::strtod(this->getInput().c_str(), NULL);
 		else
 			std::cout << "Invalid Argument" << std::endl;
 		

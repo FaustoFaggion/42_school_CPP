@@ -5,23 +5,23 @@ ConvertFloat::ConvertFloat() {
 
 ConvertFloat::ConvertFloat(char c) {
 	std::cout << "float: ";
-	printf("%.1ff \n", static_cast<float>(c));
+	std::cout << static_cast<float>(c) << ".0f" << std::endl;
 }
 
 ConvertFloat::ConvertFloat(int c) {
 	std::cout << "float: ";
-	printf("%.1ff \n", static_cast<float>(c));
+	std::cout << static_cast<float>(c) << ".0f" << std::endl;
 }
 
 ConvertFloat::ConvertFloat(float c) {
 	std::cout << "float: ";
-	printf("%.1ff \n", c);
+	std::cout << c << ".0f" << std::endl;
 }
 
 ConvertFloat::ConvertFloat(double c) {	
 	std::cout << "float: ";
 	if (c >= 1.17549e-038  && c <= 3.40282e+038)
-		printf("%.1ff \n", static_cast<float>(c));
+		std::cout << static_cast<float>(c) << ".0f" << std::endl;
 	else {
 		std::cout << "int: conversion is impossible" << std::endl;
 	}
