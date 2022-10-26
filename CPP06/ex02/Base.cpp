@@ -42,18 +42,18 @@ void identify(Base& p) {
 		std::cout << "Type: A" << std::endl;
 	}
 	catch (const std::exception& e1) {
-		try {
-			BaseB b = dynamic_cast<BaseB&>(p);
-			std::cout << "Type: B" << std::endl;
-		}
-		catch (const std::exception& e2) {
-			try {
-				BaseC c = dynamic_cast<BaseC&>(p);
-				std::cout << "Type: C" << std::endl;
-			}
-			catch (const std::exception& e3) {
-				std::cerr << "Invalid reference" << std::endl;
-			}
-		}
+	}
+	try {
+		BaseB b = dynamic_cast<BaseB&>(p);
+		std::cout << "Type: B" << std::endl;
+	}
+	catch (const std::exception& e2) {
+	}
+	try {
+		BaseC c = dynamic_cast<BaseC&>(p);
+		std::cout << "Type: C" << std::endl;
+	}
+	catch (const std::exception& e3) {
+		std::cerr << "Invalid reference" << std::endl;
 	}
 }
