@@ -20,7 +20,12 @@ int main(void) {
 	}
 
 	std::cout << "VEC\n" << std::endl;
-	easyfind(vec, 13);
+	try {
+		easyfind(vec, 13);
+	}
+	catch(std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "LIST\n" << std::endl;
 	easyfind(lis, 12);
 	std::cout << "QUEUE\n" << std::endl;

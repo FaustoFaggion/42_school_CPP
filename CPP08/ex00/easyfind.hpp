@@ -8,6 +8,12 @@
 #include <queue>
 #include <exception>
 
+class	NotFoundException : public std::exception {
+	const char		*what() const throw() {
+		return ("Number not found!!!");
+	}
+};
+
 template<typename T>
 void	easyfind(T &value1, int value2) {
 	
@@ -17,15 +23,7 @@ void	easyfind(T &value1, int value2) {
 				return ;
 			}
 	}
-	std::cout << "Error: number not found!!!" << value2 << std::endl;
+	throw NotFoundException();
 }
-
-/*
-class	NotFoundException : public std::exception {
-	const char		*what() const throw() {
-		return ("grade too low");
-	}
-};
-*/
 
 #endif
