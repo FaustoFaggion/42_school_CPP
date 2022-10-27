@@ -11,7 +11,6 @@ class	Array {
 	private:
 		T				*arr;
 		unsigned int	size;
-		unsigned int	_n;
 
 	public:
 		Array();
@@ -28,13 +27,15 @@ class	Array {
 };
 
 template<typename T>
-Array<T>::Array() : arr(NULL), size(0), _n(0) {
+Array<T>::Array() : arr(NULL), size(0) {
 }
 
 template<typename T>
 Array<T>::Array(unsigned int size) {
 	this->size = size;
 	arr = new T[this->size];
+	for (unsigned int i = 0; i < size; i++)
+		this->arr[i] = T(); 
 }
 
 template<typename T>
@@ -56,18 +57,13 @@ Array<T>	&Array<T>::operator=(Array const &rhs) {
 }
 
 template<typename T>
-unsigned int const	&Array<T>::getSize() const {
-	return (this->size);
-}
-
-template<typename T>
-unsigned int const	&Array<T>::getN() const {
-	return (this->_n);
-}
-
-template<typename T>
 T const				&Array<T>::getArr(unsigned int i) const {
 	return(this->arr[i]);
+}
+
+template<typename T>
+unsigned int const	&Array<T>::getSize() const {
+	return (this->size);
 }
 
 template<typename T>
@@ -83,8 +79,7 @@ template<typename T>
 std::ostream	&operator<<(std::ostream &lhs, Array<T> &rhs) {
 
 	for (unsigned int i = 0; i < rhs.getSize(); i++) {
-		if (rhs.getArr(i))
-			lhs << rhs.getArr(i) << std::endl;
+		lhs << rhs.getArr(i) << std::endl;
 	}
 	return (lhs);
 }
