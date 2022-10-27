@@ -10,8 +10,16 @@ int	main(void) {
 	a[2] = 3;
 	std::cout << a << std::endl;
 
-	str[0] = "AA";
-//	str[1] = "BB";
-	str[2] = "CC";
+	try {
+		str[4] = "ss";
+		str[0] = "AA";
+		str[1] = "BB";
+		str[2] = "CC";
+	}
+	catch(std::exception &e) {
+		std::cout<< e.what();
+	}
 	std::cout << str << std::endl;
+	std::cout << a.size() << std::endl;
+	std::cout << str.size() << std::endl;
 }
