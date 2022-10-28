@@ -6,7 +6,6 @@ FLAGS		=	-Wall -Wextra -Werror  -std=c++98 -g3 -pedantic
 PATH_OBJ	=	./obj/
 
 SRC			=	main.cpp\
-				MutantStack.cpp\
 
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
