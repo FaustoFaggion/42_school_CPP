@@ -4,9 +4,10 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <algorithm>
 #include <exception>
 
-class	ClassFull : public std::exception {
+class	ClassFullException : public std::exception {
 	const char		*what() const throw() {
 		return ("Class full. Can't add more numbers!!!");
 	}
@@ -14,18 +15,21 @@ class	ClassFull : public std::exception {
 
 class Span {
 	private:
-		unsigned int _n;
-	public:
 		std::vector<int>	_vec;
+		unsigned int _maxSize;
+	public:
 		Span();
-		Span(unsigned int n);
+		Span(unsigned int maxSize);
 		~Span();
 
-		void	addNumber(int n);
+		unsigned int		getMaxSize() const;
+		int					getVec(unsigned int ld) const;
 
-		std::vector<int>	getVec() {
-			return (this->_vec);
-		}
+		void				addNumber(int n);
+		void				shortestSpan();
+		void				longestSpan();
 };
+
+std::ostream	&operator<<(std::ostream &lhs, Span &rhs);
 
 #endif
