@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <exception>
+ #include <sys/time.h>
 
 class	ClassFullException : public std::exception {
 	const char		*what() const throw() {

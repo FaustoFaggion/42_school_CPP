@@ -2,19 +2,20 @@
 
 int	main(void) {
 
-	Span	s(4);
+	Span	s(10000);
+	struct timeval t;
+	
+	gettimeofday(&t, NULL);
+	srand(t.tv_usec);
 
 	try {
-			s.addNumber(2);
-			s.addNumber(27);
-			s.addNumber(12);
-			s.addNumber(30);
+		for (unsigned int i = 0; i < s.getMaxSize(); i++) {
+			s.addNumber(abs(rand()));
+		}
 	}
 	catch(std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-
-
 
 	std::cout << s << std::endl;
 
