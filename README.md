@@ -15,14 +15,16 @@ need not be preﬁxed with the namespace name, but entities outside of it must u
 fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Namespaces are useful for grouping related deﬁnitions together.</p>
 
-<h3>This</h3>
+<h3>Keyword This</h3>
 
 <p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
 function was called.</p>
 <p>This cannot be used in a static member function.</p>
-<h4>link</h4>
-https://www.youtube.com/watch?v=Z_hPJ_EhceI
 
+<p>link</p>
+<ul>
+<li>https://www.youtube.com/watch?v=Z_hPJ_EhceI</li>
+</ul>
 
 
 
