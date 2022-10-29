@@ -5,7 +5,7 @@
 <h2>CPP00</h2> 
 ### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
 
-<h3>Namespace</h3>
+<h2>Namespace</h2>
 
 <p>Used to prevent name collisions when using multiple libraries, a namespace is a declarative preﬁx for functions,
 classes, types, etc.</p>
@@ -15,7 +15,7 @@ need not be preﬁxed with the namespace name, but entities outside of it must u
 fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Namespaces are useful for grouping related deﬁnitions together.</p>
 
-<h3>Class</h3>
+<h2>Class</h2>
 
 <p>Classes are an expanded concept of data structures: like data structures, they can contain:</p>
 <ul>
@@ -56,8 +56,8 @@ class Rectangle {
 };
 
 void Rectangle::set_values (int x, int y) {
-  width = x;
-  height = y;
+	width = x;
+	height = y;
 }
 </pre>
 </code>
@@ -68,12 +68,35 @@ void Rectangle::set_values (int x, int y) {
 <p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
 function was called.</p>
 <p>This cannot be used in a static member function.</p>
-
 <p>link</p>
 <ul>
 <li>https://www.youtube.com/watch?v=Z_hPJ_EhceI</li>
 </ul>
 
+<h3>Constructors</h3>
+
+<p>It's aspecial function which is automatically called whenever a new object of this class is created.</p> 
+<p>The constructor initialize the member variables or allocate storage to avoid an undetermined result in case of a variable had never been assigned a value.</p>
+<p>Constructors cannot be called explicitly as if they were regular member functions. They are only executed once, when a new object of that class is created.</p>
+<p>Notice how neither the constructor prototype declaration (within the class) nor the latter constructor definition, have return values; not even void: Constructors never return values, they simply initialize the object.</p>
+
+<h4>Overloading constructors</h4>
+<p>Like any other function, a constructor can also be overloaded with different versions taking different parameters: with a different number of parameters and/or parameters of different types. The compiler will automatically call the one whose parameters match the arguments.</p>
+
+<h4>Default Constructor</h4>
+
+<p>The default constructor is the constructor that takes no parameters, and it is special because it is called when an object is declared but is not initialized with any arguments.</p>
+
+<b>Initialization</b>
+
+<p>Note how rectb is not even constructed with an empty set of parentheses - in fact, empty parentheses cannot be used to call the default constructor.</p>
+<code>
+<pre>
+Rectangle rectb;   // ok, default constructor called
+Rectangle rectc(); // oops, default constructor NOT called 
+</pre>
+</code>
+<p>This is because the empty set of parentheses would make of rectc a function declaration instead of an object declaration: It would be a function that takes no arguments and returns a value of type Rectangle.</p>
 
 
 #### EX00 
