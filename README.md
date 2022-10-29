@@ -15,6 +15,22 @@ need not be preﬁxed with the namespace name, but entities outside of it must u
 fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Namespaces are useful for grouping related deﬁnitions together.</p>
 
+<h3>Class</h3>
+
+<p>Classes are an expanded concept of data structures: like data structures, they can contain data members, but they can also contain functions as members.</p>
+<p>An object is an instantiation of a class. In terms of variables, a class would be the type, and an object would be the variable.</p>
+<p>Classes are defined using either keyword class or keyword struct, with the following syntax:</p>
+code {
+class class_name {
+  access_specifier_1:
+    member1;
+  access_specifier_2:
+    member2;
+  ...
+} object_names;
+}
+</p>
+<p>Class is a way to group data and functionalities together</p>
 <h3>Keyword This</h3>
 
 <p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
