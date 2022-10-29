@@ -20,6 +20,7 @@ fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Classes are an expanded concept of data structures: like data structures, they can contain data members, but they can also contain functions as members.</p>
 <p>An object is an instantiation of a class. In terms of variables, a class would be the type, and an object would be the variable.</p>
 <p>Classes are defined using either keyword class or keyword struct, with the following syntax:</p>
+<pre>
 <code>
 class <name> {
 	
@@ -27,7 +28,16 @@ class <name> {
 		member1;
 	access_specifier_2:
 		member2;
-};</code>
+};
+</code>
+</pre>
+
+<h4>access_specifiers</h4>
+<ul>
+<li><b>private:</b> members of a class are accessible only from within other members of the same class (or from their "friends").</li>
+<li><b>protected:</b> members are accessible from other members of the same class (or from their "friends"), but also from members of their derived classes.</li>
+<li><b>public:</b> members are accessible from anywhere where the object is visible.<li>
+</ul>
 
 <h3>Keyword This</h3>
 
