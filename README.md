@@ -17,27 +17,49 @@ fully qualiﬁed name has the format <namespace>::<entity>.</p>
 
 <h3>Class</h3>
 
-<p>Classes are an expanded concept of data structures: like data structures, they can contain data members, but they can also contain functions as members.</p>
+<p>Classes are an expanded concept of data structures: like data structures, they can contain:</p>
+<ul>
+<li>data members (attributes)</li>
+<li>functions as members (methods)</li>
+</ul>
 <p>An object is an instantiation of a class. In terms of variables, a class would be the type, and an object would be the variable.</p>
 <p>Classes are defined using either keyword class or keyword struct, with the following syntax:</p>
-<pre>
 <code>
-class <name> {
-	
+<pre>
+class "name" {
 	access_specifier_1:
 		member1;
 	access_specifier_2:
 		member2;
 };
-</code>
 </pre>
+</code>
 
 <h4>access_specifiers</h4>
 <ul>
 <li><b>private:</b> members of a class are accessible only from within other members of the same class (or from their "friends").</li>
 <li><b>protected:</b> members are accessible from other members of the same class (or from their "friends"), but also from members of their derived classes.</li>
-<li><b>public:</b> members are accessible from anywhere where the object is visible.<li>
+<li><b>public:</b> members are accessible from anywhere where the object is visible.</li>
 </ul>
+
+<h4>scope operator '::'</h4>
+
+<p>It is used to define a member of a class outside the class itself.</p>
+<code>
+class Rectangle {
+	private:
+		int width, height;
+	public:
+		void set_values (int,int);
+		int area() {return width*height;}
+};
+
+void Rectangle::set_values (int x, int y) {
+  width = x;
+  height = y;
+}
+</code>
+<p>In the example above the method set_values was prototyped inside the class but its definition is outside, the operator of scope (::) is used to specify that the function being defined is a member of the class Rectangle and not a regular non-member function.</p>
 
 <h3>Keyword This</h3>
 
