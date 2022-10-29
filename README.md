@@ -46,6 +46,7 @@ class "name" {
 
 <p>It is used to define a member of a class outside the class itself.</p>
 <code>
+<pre>
 class Rectangle {
 	private:
 		int width, height;
@@ -58,8 +59,9 @@ void Rectangle::set_values (int x, int y) {
   width = x;
   height = y;
 }
+</pre>
 </code>
-<p>In the example above the method set_values was prototyped inside the class but its definition is outside, the operator of scope (::) is used to specify that the function being defined is a member of the class Rectangle and not a regular non-member function.</p>
+<p>In the example above the method set_values was prototyped inside the class but its definition is outside, the operator of scope ( : : ) is used to specify that the function being defined is a member of the class Rectangle and not a regular non-member function.</p>
 
 <h3>Keyword This</h3>
 
