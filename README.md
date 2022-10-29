@@ -21,7 +21,7 @@ fully qualiﬁed name has the format <namespace>::<entity>.</p>
 function was called.</p>
 <p>This cannot be used in a static member function.</p>
 
-<link href="https://www.youtube.com/watch?v=Z_hPJ_EhceI">
+<link rel = "ee" href="https://www.youtube.com/watch?v=Z_hPJ_EhceI">
 
 
 
