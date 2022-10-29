@@ -98,14 +98,15 @@ Rectangle rectc(); // oops, default constructor NOT called
 </code>
 <p>This is because the empty set of parentheses would make of rectc a function declaration instead of an object declaration: It would be a function that takes no arguments and returns a value of type Rectangle.</p>
 
-<pre>
 <h4>Uniform Initialization</h4>
-<li>Functional form: Class(); </li>
-<li>Constructors with a single parameter can be called using the variable initialization syntax (an equal sign followed by the argument):
+<ul>
+<li>Functional form:  <p>Class();</p> </li>
+<li>Variable initialization syntax:
+<p>"class name" "objectname" = initialization_value;</p></li>
+<li> Uniform initialization:
+<p>essentially the same as the functional form, but using braces ({}): class_name object_name { value, value, value, ... }</p></li>
+</ul>
 
-class_name object_name = initialization_value;</li>
-<li></li>
-</pre>
 #### EX00 
 #### EX01
 #### EX02
