@@ -1,10 +1,11 @@
-# 42_school_CPP
-CPP piscine from 42 school
+<h1>42_school_CPP</h1>
 
-## CPP00 
+<p>CPP piscine from 42 school</p>
+
+<h2>CPP00</h2> 
 ### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
 
-<h4>Namespace</h4>
+<h3>Namespace</h3>
 
 <p>Used to prevent name collisions when using multiple libraries, a namespace is a declarative preﬁx for functions,
 classes, types, etc.</p>
@@ -13,6 +14,15 @@ name of the namespace. When writing code within a namespace, named entities belo
 need not be preﬁxed with the namespace name, but entities outside of it must use the fully qualiﬁed name. The
 fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Namespaces are useful for grouping related deﬁnitions together.</p>
+
+<h3>This</h3>
+
+<p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
+function was called.</p>
+<p>This cannot be used in a static member function.</p>
+
+<link href="https://www.youtube.com/watch?v=Z_hPJ_EhceI">
+
 
 
 
