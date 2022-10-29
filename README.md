@@ -20,9 +20,8 @@ fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
 function was called.</p>
 <p>This cannot be used in a static member function.</p>
-
-<link rel = "ee" href="https://www.youtube.com/watch?v=Z_hPJ_EhceI">
-
+<h4>link</h4>
+https://www.youtube.com/watch?v=Z_hPJ_EhceI
 
 
 
