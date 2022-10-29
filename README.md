@@ -20,16 +20,16 @@ fully qualiﬁed name has the format <namespace>::<entity>.</p>
 <p>Classes are an expanded concept of data structures: like data structures, they can contain data members, but they can also contain functions as members.</p>
 <p>An object is an instantiation of a class. In terms of variables, a class would be the type, and an object would be the variable.</p>
 <p>Classes are defined using either keyword class or keyword struct, with the following syntax:</p>
-code {
-class class_name {
-  access_specifier_1:
-    member1;
-  access_specifier_2:
-    member2;
-  ...
-} object_names;
-}
-</p>
+<code>
+class <name> {
+	
+	access_specifier_1:
+		member1;
+	access_specifier_2:
+		member2;
+};
+</code>
+
 <p>Class is a way to group data and functionalities together</p>
 <h3>Keyword This</h3>
 
