@@ -1,13 +1,13 @@
-NAME		=	form2
+NAME		=	form3
 CC			=	c++
 
-FLAGS		=	-Wall -Wextra -Werror -g3
+FLAGS		=	-Wall -Wextra -Werror  -std=c++98 -g3
 
 PATH_OBJ	=	./obj/
 
 SRC			=	main.cpp\
 				Bureaucrat.cpp\
-				Form.cpp\
+				AForm.cpp\
 				ShrubberyCreationForm.cpp\
 				RobotomyRequestForm.cpp\
 				PresidentialPardonForm.cpp\
@@ -16,7 +16,7 @@ SRC			=	main.cpp\
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	Bureaucrat.hpp\
-				Form.hpp\
+				AForm.hpp\
 				ShrubberyCreationForm.hpp\
 				RobotomyRequestForm.hpp\
 				PresidentialPardonForm.hpp\

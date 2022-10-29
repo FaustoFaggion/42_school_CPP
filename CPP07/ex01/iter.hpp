@@ -12,6 +12,16 @@ void	iter(T *array, int len, void(*f)(T&)) {
 }
 
 template<typename T>
+void	show(T const &value) {
+	std::cout << value << std::endl;
+}
+
+template<typename T>
+void	show(T *value) {
+	std::cout << *value << std::endl;
+}
+
+template<typename T>
 void	show(T &value) {
 	std::cout << value << std::endl;
 }
@@ -21,6 +31,10 @@ void	sum(T &value) {
 	value = value + 32;
 }
 
+template<typename T>
+void	sum(T *value) {
+	value = value + 32;
+}
 
 
 #endif

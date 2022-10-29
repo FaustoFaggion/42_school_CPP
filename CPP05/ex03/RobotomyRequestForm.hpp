@@ -5,9 +5,9 @@
 #include <string.h>
 #include <cstdlib>
 #include <ctime>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class RobotomyRequestForm : public Form {
+class RobotomyRequestForm : public AForm {
 	private:
 		std::string	_target;
 		RobotomyRequestForm();
@@ -19,9 +19,8 @@ class RobotomyRequestForm : public Form {
 
 		std::string	const			&getTarget() const;
 
-		void						executeRandon(std::string target);
-		void						execute(Bureaucrat const &executor) const;
-
+		void							execute(Bureaucrat const &executor) const;
+		
 		RobotomyRequestForm const	&operator=(RobotomyRequestForm const &rsc);
 };
 

@@ -1,10 +1,10 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <fstream>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
 
 	private:
 		std::string	_target;
@@ -17,7 +17,7 @@ class ShrubberyCreationForm : public Form {
 		
 		std::string	const	&getTarget() const;
 
-		void				createFile(std::string target);
+		void				execute(Bureaucrat const &executor) const;
 
 		class FileFailOpenException : public std::exception {
 			const char *what() const throw();

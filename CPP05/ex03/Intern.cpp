@@ -1,13 +1,24 @@
 #include "Intern.hpp"
-#include <cstring>
+/*
+Intern::Intern(void) {
+  return;
+}
 
+Intern::Intern(Intern const &src) {
+  *this = src;
+}
+
+Intern::~Intern(void) {
+  return;
+}
+*/
 const char *Intern::FormDoesNotExistException::what() const throw() {
 		return ("Form does not exist!!!");
 };
 
-Form	*Intern::makeForm(const std::string name, std::string target) {
+AForm	*Intern::makeForm(const std::string name, std::string target) {
 	
-	Form	*form;
+	AForm	*form;
 	int		opt = 3;
 
 	std::string	names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
@@ -37,3 +48,9 @@ Form	*Intern::makeForm(const std::string name, std::string target) {
 	}
 	return (form);
 }
+/*
+Intern const &Intern::operator=(const Intern& rhs) {
+  (void)rhs;
+  return (*this);
+}
+*/

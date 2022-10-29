@@ -31,7 +31,8 @@ int main (int argc, char *argv[]) {
 	std::size_t		index;
 
 	if (argc != 4){
-	std::cout << "Enter incorrect number of arguments!!!" <<std::endl;
+		std::cout << "Enter incorrect number of arguments!!!" <<std::endl;
+		return (1);
 	}
 	
 	writeFile.open ("write_file", std::fstream::in | std::fstream::out | std::fstream::trunc);

@@ -4,6 +4,19 @@ CPP piscine from 42 school
 ## CPP00 
 ### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other stuff
 
+<h4>Namespace</h4>
+
+<p>Used to prevent name collisions when using multiple libraries, a namespace is a declarative preﬁx for functions,
+classes, types, etc.</p>
+<p>A C++ namespace is a collection of C++ entities (functions, classes, variables), whose names are preﬁxed by the
+name of the namespace. When writing code within a namespace, named entities belonging to that namespace
+need not be preﬁxed with the namespace name, but entities outside of it must use the fully qualiﬁed name. The
+fully qualiﬁed name has the format <namespace>::<entity>.</p>
+<p>Namespaces are useful for grouping related deﬁnitions together.</p>
+
+
+
+
 #### EX00 
 #### EX01
 #### EX02
@@ -86,3 +99,112 @@ Links:
 links:
 
 	https://www.youtube.com/watch?v=X8nYM8wdNRE
+
+Function Overiding
+
+	https://www.youtube.com/watch?v=Zd_4xa071nc
+
+#### EX02
+
+#### EX03 Vitual fuctions, Vtable, Multiple inheritance
+
+links:
+
+Virtual Functions
+
+	https://www.youtube.com/watch?v=oIV2KchSyGQ
+
+
+Vtable
+
+	https://www.youtube.com/watch?v=hS7kPtVB1vI
+
+
+Multiple Inheritance
+
+	https://www.youtube.com/watch?v=KVREEoovDd4
+
+### CPP04
+
+#### EX00
+
+#### EX01 Deep ans Shallow copy
+links:
+
+Deep and Shallow copy
+
+	https://www.youtube.com/watch?v=BvR1Pgzzr38&t=875s
+
+Virtual Functions
+
+	https://www.youtube.com/watch?v=oIV2KchSyGQ
+
+
+Vtable
+
+	https://www.youtube.com/watch?v=hS7kPtVB1vI
+
+
+#### EX02 Viltual Function, Pure Virtual Function, Abstract Class
+
+Abstract class - It is a class that has at least one pure virtual function.
+
+links:
+
+	https://www.youtube.com/watch?v=T8f4ajtFU9g
+
+#### EX03
+
+### CPP05 Exceptions( try and catch)
+
+#### EX00
+
+Try and Catch
+
+	links:https://www.youtube.com/watch?v=kjEhqgmEiWY
+
+#### EX01
+
+#### EX02
+
+#### EX03
+
+### CPP06 - Type Conversions
+
+#### 
+
+#### EX00 Conversion of Scalar Types
+
+#### EX01
+
+#### EX02 Dynamic Casting
+
+	Used only for polymorfic classes.
+
+Cherno - https://www.youtube.com/watch?v=CiHfz6pTolQ
+
+### CPP07 - Template
+
+<p>There are two places where we can apply templates:</p>
+<ul>
+<li>function templates </li>
+<li>class templates</li>
+</ul>
+<p>Templates are the way to write generic programs</p>
+<p>The main point is we pass data type as parameter to function or class.</p>
+
+
+
+Templates will be evaluated at compile time. It is just created when is called in the code. It will be created with the type that was called.
+
+Cherno - https://www.youtube.com/watch?v=I-hZkUa9mIs
+
+Function as parameter of another function - https://www.youtube.com/watch?v=67vTjgbT56Q
+
+<h4>CPP08</h4>
+<h5>std::stack</h5>
+<p> It is a container adapter. It's not a container, it's adapting a existing container and mapping the functions.</p>
+<p>By default internaly uses the std::deque STL container.</p>
+<p>It's a LIFO(last-in, first-out) data structure</p>
+<p><link rel="cplusplus reference" href="https://cplusplus.com/reference/stack/stack/"></p>
+

@@ -7,7 +7,7 @@ int	main(void) {
 
 	Bureaucrat	*soLove;
 	Intern		someIntern;
-	Form		*form = NULL;
+	AForm		*form = NULL;
 
 	std::cout << "\n-------------Sign Shrubbery---------------\n" << std::endl;
 	try {

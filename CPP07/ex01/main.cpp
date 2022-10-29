@@ -5,13 +5,13 @@ int	main(void) {
 	char	c[2] = {'A', 'B'};
 	int		array[5] = {0, 1, 2, 3, 4};
 
-	iter(array, 5, show);
-	iter(array, 5, sum);
-	iter(array, 5, show);
+	iter<int>(array, 5, show<int>);
+	iter<int>(array, 5, sum<int>);
+	iter<int>(array, 5, show<int>);
 
-	iter(c, 2, show);
-	iter(c, 2, sum);
-	iter(c, 2, show);
+	iter<char>(c, 2, show<char>);
+	iter<char>(c, 2, sum<char>);
+	iter<char>(c, 2, show<char>);
 
-
+	return (0);
 }

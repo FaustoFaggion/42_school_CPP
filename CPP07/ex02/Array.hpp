@@ -30,6 +30,7 @@ class	Array {
 
 template<typename T>
 Array<T>::Array() : _arr(NULL), _size(0) {
+
 }
 
 template<typename T>
@@ -47,12 +48,14 @@ Array<T>::~Array() {
 
 template<typename T>
 Array<T>::Array(Array const &rhs) {
+	this->_arr = new T[rhs._size];
+	this->_size = rhs._size;
 	*this = rhs;
 }
 
 template<typename T>
 Array<T>	&Array<T>::operator=(Array const &rhs) {
-	for (unsigned int i = 0; i < rhs._n; i++) {
+	for (unsigned int i = 0; i < rhs._size; i++) {
 		this->_arr[i] = rhs.getArr(i);
 	}
 	return (*this);
@@ -71,7 +74,7 @@ unsigned int	&Array<T>::size() {
 template<typename T>
 T	&Array<T>::operator[](unsigned int i) {
 	if (this->_size <= i || i < 0) {
-		std::invalid_argument e("Invalid argument");
+		std::out_of_range e("Index out of range");
 		throw e;
 	}
 	return (this->_arr[i]);

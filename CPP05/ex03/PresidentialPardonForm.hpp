@@ -3,9 +3,9 @@
 
 #include <iostream>
 #include <string.h>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class PresidentialPardonForm : public Form {
+class PresidentialPardonForm : public AForm {
 	private:
 		std::string	_target;
 		PresidentialPardonForm();
@@ -17,9 +17,8 @@ class PresidentialPardonForm : public Form {
 
 		std::string	const				&getTarget() const;
 
-		void							exec(std::string target);
 		void							execute(Bureaucrat const &executor) const;
-
+		
 		PresidentialPardonForm const	&operator=(PresidentialPardonForm const &rsc);
 };
 

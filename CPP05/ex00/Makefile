@@ -1,7 +1,7 @@
 NAME		=	bureaucrat
 CC			=	c++
 
-FLAGS		=	-Wall -Wextra -Werror -g3
+FLAGS		=	-Wall -Wextra -Werror  -std=c++98 -g3
 
 PATH_OBJ	=	./obj/
 
