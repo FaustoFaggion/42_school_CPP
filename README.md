@@ -27,10 +27,8 @@ class <name> {
 		member1;
 	access_specifier_2:
 		member2;
-};
-</code>
+};</code>
 
-<p>Class is a way to group data and functionalities together</p>
 <h3>Keyword This</h3>
 
 <p>Within a member function of a class, the keyword this is a pointer to the instance of the class on which the
