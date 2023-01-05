@@ -107,9 +107,15 @@ Rectangle rectc(); // oops, default constructor NOT called
 <p>essentially the same as the functional form, but using braces ({}): class_name object_name { value, value, value, ... }</p></li>
 </ul>
 
-#### EX00 
+#### EX00
+
 #### EX01
+
+![conversion hierarchy](./CPP00_ex01_UML.png)
+<p>UML diagram</p>
+
 #### EX02
+
 
 ## CPP01 
 ### Memory Allocation, pointers to members, references, switch statement
@@ -264,6 +270,9 @@ Try and Catch
 #### 
 
 #### EX00 Conversion of Scalar Types
+
+![conversion hierarchy](./conversion_hierarchy.png)
+<p>conversion hierarchy</p>
 
 #### EX01
 
