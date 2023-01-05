@@ -47,18 +47,20 @@ int	DetectType::verify() {
 				if (this->getInput()[i] != '.') {
 					if (flag != 1)
 						return (IMPOSSIBLE);
-					if ((this->getInput()[i] == 'f' || this->getInput()[i] == 'F') && std::isdigit(this->getInput()[i - 1]) && this->getInput()[i + 1] == '\0')
+					if ((this->getInput()[i] == 'f' || this->getInput()[i] == 'F')
+										&& std::isdigit(this->getInput()[i - 1])
+											&& this->getInput()[i + 1] == '\0')
 						return (FLOAT);
 					else	
 						return (IMPOSSIBLE);
 				}
 			}
 		}
-		if (flag == 1)
+		if (flag == 1) {
 			return (DOUBLE);
+		}
 		else if (flag == 0)
 			return (INT);
 	}
-	std::cout << "não entrei" <<std::endl;
 	return (-1);
 }
