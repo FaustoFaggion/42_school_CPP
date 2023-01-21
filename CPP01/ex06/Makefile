@@ -2,7 +2,7 @@ NAME		=	harl
 
 CC			=	c++
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 PATH_OBJ	=	./obj/
 
@@ -37,4 +37,4 @@ run:	$(NAME)
 	./$(NAME)
 
 valgrind: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) debug
