@@ -7,7 +7,7 @@ int	loadFileBuffer(std::string file, std::string& fileBuffer){
 	std::fstream	readFile;
 	std::string		buff;
 
-	readFile.open (file, std::fstream::in | std::fstream::out);
+	readFile.open (file.c_str(), std::fstream::in | std::fstream::out);
 	if (readFile.fail()){
 		std::cout << "read_file fail to open!!" << std::endl;
 		return (1);
@@ -44,15 +44,15 @@ int main (int argc, char *argv[]) {
 	
 	
 	buff = argv[2];
-	std::string pat(argv[3]);
+	std::string patch(argv[3]);
 	index = 0;
 	while (1){
 		index = fileBuffer.find(buff, index);
 		if (index == std::string::npos)
 			break ;
 		fileBuffer.erase(index, buff.length());
-		fileBuffer.insert(index, pat);
-		index += pat.length();
+		fileBuffer.insert(index, patch);
+		index += patch.length();
 	}
 
 	writeFile << fileBuffer;
