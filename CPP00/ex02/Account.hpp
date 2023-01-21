@@ -29,7 +29,7 @@ public:
 	static int	getNbWithdrawals( void );
 	static void	displayAccountsInfos( void );
 
-	Account( int initial_deposit );
+	explicit Account( int initial_deposit );
 	~Account( void );
 
 	void	makeDeposit( int deposit );

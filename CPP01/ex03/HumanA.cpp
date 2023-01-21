@@ -1,7 +1,6 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon){
-}
+HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon){ }
 
 std::string	HumanA::getName(){
 	return(this->name);
@@ -12,5 +11,6 @@ std::string HumanA::getWeapon(){
 }
 
 void	HumanA::attack(){
-	std::cout << this->getName() << " attacks with their" << this->getWeapon() << std::endl;
+	std::cout << this->getName() << " attacks with their " << this->getWeapon()
+																   << std::endl;
 }

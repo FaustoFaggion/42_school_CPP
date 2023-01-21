@@ -2,9 +2,9 @@
 
 int	main(void) {
 
-	std::string	str = "Hi THIS IS BRAIN";
-	std::string	*stringPTR = &str;
-	std::string	&stringREF = str;
+	std::string		str = "Hi THIS IS BRAIN";
+	std::string		*stringPTR = &str;
+	std::string&	stringREF = str;
 
 	std::cout << "memory addr str: " << &str << std::endl;
 	std::cout << "memory addr stringPTR: " << &stringPTR << std::endl;

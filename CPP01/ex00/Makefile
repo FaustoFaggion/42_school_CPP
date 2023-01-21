@@ -38,3 +38,5 @@ re: fclean all
 run:	$(NAME)
 		./$(NAME)
 
+valgrind: re
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)

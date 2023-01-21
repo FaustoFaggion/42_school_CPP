@@ -8,7 +8,6 @@ Zombie::Zombie(std::string z_name)
 Zombie::~Zombie(void)
 {
 	std::cout << name << std::endl;
-
 	return ;
 }
 
