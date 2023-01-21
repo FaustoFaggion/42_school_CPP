@@ -2,12 +2,12 @@
 #include <string.h>
 #include <fstream>
 
-int	loadFileBuffer(std::string file, std::string& fileBuffer){
+int	loadFileBuffer(char *file, std::string& fileBuffer){
 	
 	std::fstream	readFile;
 	std::string		buff;
 
-	readFile.open (file.c_str(), std::fstream::in | std::fstream::out);
+	readFile.open (file, std::fstream::in | std::fstream::out);
 	if (readFile.fail()){
 		std::cout << "read_file fail to open!!" << std::endl;
 		return (1);
@@ -22,9 +22,27 @@ int	loadFileBuffer(std::string file, std::string& fileBuffer){
 	return (0);
 }
 
+static std::string	write_name(std::string filename) {
+
+	std::string	write_file;
+
+	int dot = 0;
+	dot = filename.find('.');
+	if (dot > 0) {
+		write_file.append(filename, 0, dot);
+		write_file.append(".replace");
+	}
+	else{
+		write_file.append(filename);
+		write_file.append(".replace");
+	}
+	return (write_file);
+}
+
 int main (int argc, char *argv[]) {
 
 	
+	std::string		write_file_name;
 	std::fstream	writeFile;
 	std::string		buff;
 	std::string		fileBuffer;
@@ -35,7 +53,9 @@ int main (int argc, char *argv[]) {
 		return (1);
 	}
 	
-	writeFile.open ("write_file", std::fstream::in | std::fstream::out | std::fstream::trunc);
+	write_file_name = write_name(argv[1]);
+
+	writeFile.open (write_file_name.c_str(), std::fstream::in | std::fstream::out | std::fstream::trunc);
 	if (writeFile.fail()){
 		std::cout << "write_file fail to open!!" << std::endl;
 		return (1);
@@ -48,7 +68,7 @@ int main (int argc, char *argv[]) {
 	index = 0;
 	while (1){
 		index = fileBuffer.find(buff, index);
-		if (index == std::string::npos)
+		if (index == fileBuffer.npos)
 			break ;
 		fileBuffer.erase(index, buff.length());
 		fileBuffer.insert(index, patch);
