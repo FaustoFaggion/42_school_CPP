@@ -2,7 +2,7 @@
 
 int const Fixed::_fractionalBits = 8;
 
-Fixed::Fixed(void){
+Fixed::Fixed(void) {
 	_rawBits = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -28,5 +28,6 @@ int		Fixed::getRawBits(void) const{
 }
 
 void	Fixed::setRawBits(int const raw){
+	std::cout << "setRawBits member function called" << std::endl;
 	_rawBits = raw;
 }

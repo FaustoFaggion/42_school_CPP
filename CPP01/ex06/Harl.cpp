@@ -45,7 +45,8 @@ void	Harl::complain(std::string level){
     int opt;
 
 	std::string levelLog[4] = {"debug", "info", "warning", "error"};
-	void	(Harl::*function[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::notValid};
+	void	(Harl::*function[5])(void) = {&Harl::debug, &Harl::info,
+                                &Harl::warning, &Harl::error, &Harl::notValid};
 	
     opt = 4;
     for (int i = 0; i < 4; i++){
@@ -70,7 +71,7 @@ void	Harl::complain(std::string level){
         case 3:
             (this->*function[opt])();
             break;
-        case 4:
+        default:
             (this->*function[4])();
     }
 	return;

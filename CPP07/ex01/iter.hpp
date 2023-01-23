@@ -12,17 +12,27 @@ void	iter(T *array, int len, void(*f)(T&)) {
 }
 
 template<typename T>
+void	iter(T	**array, int len, void(*f)(T*)) {
+	for (int i = 0; i < len; i++) {
+		f(array[i]);
+	}
+}
+
+template<typename T>
 void	show(T const &value) {
+	std::cout << "const &value" << std::endl;
 	std::cout << value << std::endl;
 }
 
 template<typename T>
 void	show(T *value) {
+	std::cout << "*value" << std::endl;
 	std::cout << *value << std::endl;
 }
 
 template<typename T>
-void	show(T &value) {
+void	show(T& value) {
+	std::cout << "&value" << std::endl;
 	std::cout << value << std::endl;
 }
 

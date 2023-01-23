@@ -21,7 +21,7 @@ int const	&Data::getData2() const {
 	return (this->_data2);
 }
 
-Data	&Data::operator=(Data const &rhs) {
+Data&	Data::operator=(Data const &rhs) {
 	this->_data1 = rhs.getData1();
 	this->_data2 = rhs.getData2();
 	return(*this);
