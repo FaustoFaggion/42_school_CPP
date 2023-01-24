@@ -15,7 +15,7 @@ Fixed::Fixed(const int intNumb) {
 Fixed::Fixed(const float floatNumb){
 	std::cout << "Float constructor called" << std::endl;
 	
-	float	f = floatNumb * (float)(1 >> _fractionalBits);
+	float	f = floatNumb * (float)(1 << _fractionalBits);
 	f = roundf(f);
 	_rawBits = f;
 
