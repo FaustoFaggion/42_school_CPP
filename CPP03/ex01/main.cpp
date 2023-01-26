@@ -14,6 +14,9 @@ int main (void) {
 	std::cout << c << std::endl;
 	c.berepaired(12);
 	std::cout << c << std::endl;
+	c.takeDamage(106);
+	std::cout << c << std::endl;
+	c.attack(a.getName());
 
 	return (0);
 }
