@@ -25,10 +25,6 @@ class ClapTrap {
 		int			getHitPoints();
 		int			getEnergyPoints();
 		int			getAttackDamage();
-		void		setName(std::string name);
-		void		setHitPoints(int hitPoints);
-		void		setEnergyPoints(int energyPoints);
-		void		setAttackDamage(int attackDamage);
 
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);

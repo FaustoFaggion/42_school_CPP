@@ -2,18 +2,18 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap() {
 	
-	setName("ScavTrap");
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	name = "ScavTrap";
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage =  20;
 	std::cout << "ScavTrap default constructor called!!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage =  20;
 	std::cout << "ScavTrap constructor called!!" << std::endl;
 }
 

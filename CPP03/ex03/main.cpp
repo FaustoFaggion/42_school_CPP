@@ -4,7 +4,7 @@ int main (void) {
 
 	ClapTrap	a("Pepe");
 
-	DiamondTrap	e("Dia");
+	DiamondTrap	e("Bob");
 
 	std::cout << e << std::endl;
 	e.attack(a.getName());
