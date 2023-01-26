@@ -3,6 +3,7 @@
 int const Fixed::_fractionalBits = 8;
 
 Fixed::Fixed(void) : _rawBits(0) {
+
 }
 
 Fixed::Fixed(const int intNumb) {
