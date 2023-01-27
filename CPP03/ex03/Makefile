@@ -2,7 +2,7 @@ NAME		=	diamond_trap
 
 CC			=	c++
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wall -Wextra -Werror -Wno-shadow -std=c++98
 
 PATH_OBJ	=	./obj/
 
@@ -35,8 +35,7 @@ clean:
 fclean:	clean
 	rm -rf $(NAME)
 
-re:	fclean
-	$(NAME)
+re:	fclean all
 
 run:	$(NAME)
 	./$(NAME)

@@ -6,6 +6,7 @@ int main (void) {
 	ClapTrap	a("Pepe");
 	ClapTrap	b("Ronaldo");
 
+	std::cout << "----------------" << std::endl;
 	std::cout << a << std::endl;
 	a.attack(b.getName());
 	std::cout << a << std::endl;
@@ -14,6 +15,7 @@ int main (void) {
 	a.berepaired(6);
 	std::cout << a << std::endl;
 
+	std::cout << "--------ScavTrap c--------" << std::endl;
 	ScavTrap	c("Jonas");
 
 	std::cout << c << std::endl;
@@ -24,6 +26,7 @@ int main (void) {
 	c.berepaired(6);
 	std::cout << c << std::endl;
 
+	std::cout << "--------FragTrap d--------" << std::endl;
 	FragTrap	d("Frag");
 
 	std::cout << d << std::endl;
@@ -35,5 +38,6 @@ int main (void) {
 	std::cout << d << std::endl;
 	d.highFiveGuys();
 
+	std::cout << "--------Destructors--------" << std::endl;
 	return (0);
 }

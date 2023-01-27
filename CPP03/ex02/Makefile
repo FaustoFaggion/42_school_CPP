@@ -33,8 +33,7 @@ clean:
 fclean:	clean
 	rm -rf $(NAME)
 
-re:	fclean
-	$(NAME)
+re:	fclean all
 
 run:	$(NAME)
 	./$(NAME)

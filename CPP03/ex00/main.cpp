@@ -5,6 +5,7 @@ int main (void) {
 	ClapTrap	a("Pepe");
 	ClapTrap	b("Ronaldo");
 
+	std::cout << "--------ClapTrap a and b--------" << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	a.attack(b.getName());
@@ -20,5 +21,10 @@ int main (void) {
 	std::cout << b << std::endl;
 	b.berepaired(2);
 	std::cout << b << std::endl;
+	b.takeDamage(8);
+	std::cout << b << std::endl;
+	a.berepaired(8);
+
+	std::cout << "\n--------Destructors--------" << std::endl;
 	return (0);
 }

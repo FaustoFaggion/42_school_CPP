@@ -40,8 +40,7 @@ fclean:	clean
 re:	fclean
 	$(NAME)
 
-run:	$(NAME)
-	./$(NAME)
+re:	fclean all
 
 valgrind: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)

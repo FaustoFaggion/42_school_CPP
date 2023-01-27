@@ -7,6 +7,8 @@ int main (void) {
 
 	ScavTrap	c("Jonas");
 
+	std::cout << "--------ScavTrap c--------" << std::endl;
+	c.guardGate();
 	std::cout << c << std::endl;
 	c.attack(a.getName());
 	std::cout << c << std::endl;
@@ -18,5 +20,6 @@ int main (void) {
 	std::cout << c << std::endl;
 	c.attack(a.getName());
 
+	std::cout << "--------Destructor--------" << std::endl;
 	return (0);
 }
