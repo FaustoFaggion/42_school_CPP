@@ -34,6 +34,17 @@ int main (void) {
 	std::cout << "\n--------operator = (g = e)--------" << std::endl;
 	g = e;
 	g.whoAmI();
+	
+	std::cout << "\n--------Construct i--------" << std::endl;
+	DiamondTrap	*i = new DiamondTrap("I_Diamond");
+	std::cout << "\n--------whoAmI i--------" << std::endl;
+	i->whoAmI();
+	std::cout << "\n--------delete i--------" << std::endl;
+	delete i;
+	std::cout << "\n--------operator = (i = g = e)--------" << std::endl;
+	i = &g;
+	i->whoAmI();
+
 	std::cout << "\n--------Destructors--------" << std::endl;
 
 	delete f;
