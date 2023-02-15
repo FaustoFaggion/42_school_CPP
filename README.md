@@ -204,6 +204,13 @@ Function Overiding
 
 #### EX03 Vitual fuctions, Vtable, Multiple inheritance
 
+
+### Vtable vs Pointers
+
+#### Runtime polimorphism
+<p>Virtual functions are called depending on the object type instead of the 
+pointer or reference type.</p>
+
 links:
 
 Virtual Functions

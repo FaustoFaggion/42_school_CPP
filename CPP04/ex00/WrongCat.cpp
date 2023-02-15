@@ -13,6 +13,10 @@ WrongCat::~WrongCat() {
 	std::cout << "Wrong Cat destructor called!!" << std::endl;
 }
 
+void	WrongCat::makeSound() const {
+	std::cout << "Wrong Animal Sound!!" << std::endl;
+}
+
 WrongCat	&WrongCat::operator=(WrongCat const &rhs) {
 	this->type = rhs.getType();
 	return (*this);

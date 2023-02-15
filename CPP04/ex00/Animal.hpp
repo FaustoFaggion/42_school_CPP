@@ -13,7 +13,7 @@ class Animal {
 		Animal();
 		Animal(std::string const type);
 		Animal(Animal const &rsc);
-		~Animal();
+		virtual ~Animal();
 
 		Animal&	operator=(Animal const &rhs);
 
@@ -21,7 +21,7 @@ class Animal {
 
 		void	setType(std::string const type);
 
-		void	makeSound();
+		virtual void	makeSound() const;
 };
 
 std::ostream&	operator<<(std::ostream &lhs, Animal &rhs);

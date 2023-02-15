@@ -18,6 +18,6 @@ Dog&	Dog::operator=(Dog const &rhs) {
 	return (*this);
 }
 
-void	Dog::makeSound() {
+void	Dog::makeSound() const {
 	std::cout << "au au au" << std::endl;
 }
