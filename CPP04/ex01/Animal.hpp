@@ -21,7 +21,7 @@ class Animal {
 
 		void	setType(std::string const type);
 
-		void	makeSound();
+		virtual void	makeSound() const;
 };
 
 std::ostream&	operator<<(std::ostream &lhs, Animal &rhs);

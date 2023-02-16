@@ -31,7 +31,7 @@ void	Animal::setType(std::string const type) {
 	this->type = type;
 } 
 
-void	Animal::makeSound() {
+void	Animal::makeSound() const {
 	std::cout << "Animal Sound!!" << std::endl;
 }
 

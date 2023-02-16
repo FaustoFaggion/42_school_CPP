@@ -16,7 +16,7 @@ class Cat : public Animal {
 		Cat	&operator=(Cat const &rhs);
 
 		Brain	&getBrain() const;
-		void	makeSound();
+		void	makeSound() const;
 };
 
 #endif

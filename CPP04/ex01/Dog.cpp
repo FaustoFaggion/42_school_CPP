@@ -27,6 +27,6 @@ Brain const	&Dog::getBrain() const {
 	return (*this->brain);
 }
 
-void	Dog::makeSound() {
+void	Dog::makeSound() const{
 	std::cout << "au au au" << std::endl;
 }

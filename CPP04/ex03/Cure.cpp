@@ -1,25 +1,25 @@
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {
-	std::cout << "Cure default constructor called" << std::endl;
+	// std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure(Cure const &rsc) :  AMateria()  {
-	std::cout << "Cure copy constructor called" << std::endl;
+	// std::cout << "Cure copy constructor called" << std::endl;
 	*this = rsc;
 }
 Cure::~Cure() {
-	std::cout << "Cure destructor called" << std::endl;
+	//std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure const	&Cure::operator=(Cure const &rhs) {
-	std::cout << "Ice operator= called" << std::endl;
+	// std::cout << "Ice operator= called" << std::endl;
 	this->type = rhs.getType();
 	return (*this);
 }
 
 Cure	*Cure::clone() const {
-	std::cout << "clone cure called!!" << std::endl;
+	// std::cout << "clone cure called!!" << std::endl;
 	return (new Cure());
 }
 

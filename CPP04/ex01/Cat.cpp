@@ -28,6 +28,6 @@ Brain	&Cat::getBrain() const {
 	return (*this->brain);
 }
 
-void	Cat::makeSound() {
+void	Cat::makeSound() const {
 	std::cout << "meooowwwww" << std::endl;
 }

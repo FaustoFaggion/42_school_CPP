@@ -30,7 +30,7 @@ void	WrongAnimal::setType(std::string const type) {
 	this->type = type;
 } 
 
-void	WrongAnimal::makeSound() {
+void	WrongAnimal::makeSound() const {
 	std::cout << "Wrong Animal Sound!!" << std::endl;
 }
 
