@@ -73,11 +73,21 @@ std::string const &Character::getName() const {
 }
 
 void	Character::equip(AMateria *m) {
-	for(int i = 0; i < 4; i++){
+	for(int i = 0; i < 4; i++)
+	{
 		if (this->inventory[i] == NULL) {
 			//std::cout << "equip inventory called at " << i << std::endl;
 			this->inventory[i] = m;
-			break ;
+			return ;
+		}
+	}
+	for (int i = 0; i < 50; i++)
+	{
+		if (this->leftOnTheFloor[i] == NULL)
+		{
+		//	std::cout << "unequip inventory called at " << i << std::endl;
+			this->leftOnTheFloor[i] = m;
+			return;
 		}
 	}
 }
