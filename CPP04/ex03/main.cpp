@@ -110,7 +110,7 @@ int main(void) {
     	p1->use(2, *p2);
 
     	delete ms_tmp;
-		//delete tmp5;
+		delete tmp5;
     	delete p2;
     	delete p1;
 	}
