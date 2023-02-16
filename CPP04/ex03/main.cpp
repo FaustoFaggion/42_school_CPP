@@ -109,6 +109,11 @@ int main(void) {
     	std::cout << "filled slot: " << std::endl;
     	p1->use(2, *p2);
 
+		for (int i = 0; i < 4; i++)
+		{
+			p1->unequip(i);
+		}
+
     	delete ms_tmp;
     	delete p2;
     	delete p1;

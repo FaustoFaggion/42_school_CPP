@@ -38,7 +38,7 @@ Character::~Character() {
 			this->inventory[i] = NULL;
 		}
 	}
-	for(int i = 0; i < 4; i++) {
+	for(int i = 0; i < 50; i++) {
 		if (this->leftOnTheFloor[i] != NULL) {
 			//std::cout << "inventory destructor called at " << i << std::endl;
 			delete this->leftOnTheFloor[i];
