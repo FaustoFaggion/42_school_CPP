@@ -18,8 +18,12 @@ Dog::~Dog() {
 
 Dog&	Dog::operator=(Dog const &rhs) {
 	std::cout << "Dog operator= called!!" << std::endl;
-	this->type = rhs.getType();
-	*this->brain = rhs.getBrain();
+	if (this != &rhs)
+	{
+		if (this->brain != NULL)
+			delete this->brain;
+		this->brain = new Brain(*rhs.brain);
+	}
 	return (*this);
 }
 

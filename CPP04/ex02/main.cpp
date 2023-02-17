@@ -6,50 +6,51 @@
 int    main(void) {
 
     {
-	    AAnimal    *animals[10];
+	     std::cout << "\n";
+        AAnimal    *animals[10];
+        std::cout << "\n";
         Cat        cat;
+        std::cout << "\n";
         Dog        dog;
 
+         std::cout << "\n----------MakeSound Loop---------\n";
         for (size_t i = 0; i < 10; i++)
         {
+            std::cout << "\n";
             i % 2 ? animals[i] = new Cat : animals[i] = new Dog;
             animals[i]->makeSound();
         }
 
-        std::cout << "\n-------------------\n";
+        std::cout << "\n-------Desctructor------------\n";
 
-        for (size_t i = 0; i < 10; i++)
+        for (size_t i = 0; i < 10; i++){
+            std::cout << "\n";
             delete animals[i];
-    }
-
-    std::cout << "\n-------------------\n";
-    
-	{
-        Cat cat1;
-        Cat cat2(cat1);
-        {
-            Cat tmp = cat1;
         }
     }
 
-    std::cout << "\n-------------------\n";
+    std::cout << "\n--------OTHER SCOPE-----------\n";
     
 	{
+        std::cout << "\n";
         Cat *cat = new Cat();
-        
+        std::cout << "\n";
         Cat *deepCopyCat = new Cat(*cat);
+        std::cout << "\n";
         Dog *dog = new Dog();
+        std::cout << "\n";
         Dog *deepCopyDog = new Dog(*dog);
-
+        std::cout << "\n";
         Cat cat2 = *cat;
-        
+        std::cout << "\n";
         cat2 = *deepCopyCat;
-        
+        std::cout << "\n";
         std::cout << &(cat->getBrain()) << std::endl;
         std::cout << &(deepCopyCat->getBrain()) << std::endl;
         std::cout << &(dog->getBrain()) << std::endl;
         std::cout << &(deepCopyDog->getBrain()) << std::endl;
-
+        
+        std::cout << "\n------DESTRUCTOR---------\n";
         delete cat;
         delete deepCopyCat;
         delete dog;
