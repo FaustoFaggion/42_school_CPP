@@ -12,8 +12,8 @@ class AForm;
 class Bureaucrat {
 
 	protected:
-		std::string _name;
-		int			_grade;
+		std::string const	_name;
+		int					_grade;
 		Bureaucrat();
 	
 	public:
