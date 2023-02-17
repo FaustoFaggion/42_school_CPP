@@ -25,7 +25,6 @@ class Form
 		bool const			&getSign() const;
 		int const			&getGradeSign() const;
 		int const			&getGradeExec() const;
-		void				setSign(bool sign);
 
 		void				beSigned(Bureaucrat const &responsable);
 
