@@ -101,14 +101,16 @@ int main(void) {
     	for (int i = 0; i < 4; i++){
     	    p1->use(i, *p2);
     	}
-    	std::cout << "unequip slot 1: " << std::endl;
+    	std::cout << "unequip slot 1" << std::endl;
     	p1->unequip(1);
+		std::cout << "unequip slot 3" << std::endl;
 		p1->unequip(3);
     	std::cout << "empty slot: " << std::endl;
     	p1->use(1, *p2);
-    	std::cout << "filled slot: " << std::endl;
+    	std::cout << "filled slot: ";
     	p1->use(2, *p2);
-
+		std::cout << std::endl;
+		
 		for (int i = 0; i < 4; i++)
 		{
 			p1->unequip(i);
