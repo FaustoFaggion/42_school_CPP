@@ -34,7 +34,6 @@ int const	&Form::getGradeExec() const {
 	return (this->_gradeExec);
 }
 
-
 bool const	&Form::getSign() const {
 	return (this->_sign);
 }

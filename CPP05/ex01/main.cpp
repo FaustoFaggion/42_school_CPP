@@ -85,7 +85,7 @@ int	main(void) {
 		soLove = NULL;
 		soLove = new Bureaucrat("Gi", 3);
 		std::cout << *soLove << std::endl;
-		form = new Form("form", 0, 87);
+		form = new Form("form", 100, 0);
 		std::cout << "PAREI AQUI" << std::endl;
 		std::cout << *form << std::endl;
 		form->beSigned(*soLove);
@@ -108,9 +108,10 @@ int	main(void) {
 		soLove = NULL;
 		soLove = new Bureaucrat("Gi", 3);
 		std::cout << *soLove << std::endl;
-		form = new Form("form", 1, 87);
+		form = new Form("form", 87, 1);
 		std::cout << *form << std::endl;
 		form->beSigned(*soLove);
+		std::cout << *form << std::endl;
 		std::cout << "PAREI AQUI" << std::endl;
 		delete soLove;
 		delete form;
@@ -132,8 +133,8 @@ std::cout << "\n-------------Form high to Bureaucrat signForm---------------\n" 
 		form = new Form("form", 1, 87);
 		std::cout << *form << std::endl;
 		soLove->signForm(*form);
-		std::cout << "PAREI AQUI" << std::endl;
 		form->beSigned(*soLove);
+		std::cout << "PAREI AQUI" << std::endl;
 		delete soLove;
 		delete form;
 	}
