@@ -30,6 +30,13 @@
 		"list": "cpp",
 		"unordered_map": "cpp",
 		"vector": "cpp",
-		"iterator": "cpp"
+		"iterator": "cpp",
+		"ctime": "cpp",
+		"functional": "cpp",
+		"iomanip": "cpp",
+		"optional": "cpp",
+		"sstream": "cpp",
+		"tuple": "cpp",
+		"utility": "cpp"
 	}
 }

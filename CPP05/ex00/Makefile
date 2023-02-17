@@ -11,7 +11,7 @@ SRC			=	main.cpp\
 OBJ			=	$(SRC:%.cpp=$(PATH_OBJ)%.o)
 
 HEADER		=	Bureaucrat.hpp
-				
+
 all:	$(NAME)
 
 $(PATH_OBJ)%.o:	%.cpp $(HEADER)
