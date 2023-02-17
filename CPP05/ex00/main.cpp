@@ -69,4 +69,8 @@ int	main(void) {
 		delete soLove;
 	}
 
+	soLove = new Bureaucrat("Gi", 12);
+	Bureaucrat	anotherLove(*soLove);
+	std::cout << anotherLove << std::endl;
+	delete soLove;
 }
