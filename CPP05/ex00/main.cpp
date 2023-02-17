@@ -68,9 +68,4 @@ int	main(void) {
 		std::cout << e.what() << std::endl;
 		delete soLove;
 	}
-
-	soLove = new Bureaucrat("Gi", 12);
-	Bureaucrat	anotherLove(*soLove);
-	std::cout << anotherLove << std::endl;
-	delete soLove;
 }
