@@ -1,13 +1,15 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm() {
+RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy", 72, 45) {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :	AForm("robotomy", 72, 45) {
 	this->_target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &rsc) : AForm() {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &rsc) :
+		AForm(rsc.getName(), rsc.getGradeSign(), rsc.getGradeExec())
+{
 	*this = rsc;
 }
 
@@ -40,6 +42,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 }
 
 RobotomyRequestForm const	&RobotomyRequestForm::operator=(RobotomyRequestForm const &rsc) {
+	this->setSign(rsc.getSign());
 	this->_target = rsc.getTarget();
 	return (*this);
 }

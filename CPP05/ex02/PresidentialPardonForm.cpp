@@ -1,13 +1,14 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm() {
+PresidentialPardonForm::PresidentialPardonForm() : AForm("presidential", 25, 5) {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) :	AForm("presidential", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("presidential", 25, 5) {
 	this->_target = target;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &rsc) : AForm() {
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &rsc) :
+		AForm(rsc.getName(), rsc.getGradeSign(), rsc.getGradeExec()) {
 	*this = rsc;
 }
 
@@ -28,6 +29,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 }
 
 PresidentialPardonForm const	&PresidentialPardonForm::operator=(PresidentialPardonForm const &rsc) {
+	this->setSign(rsc.getSign());
 	this->_target = rsc.getTarget();
 	return (*this);
 }

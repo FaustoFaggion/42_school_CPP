@@ -86,7 +86,9 @@ const char *AForm::AlreadySignedException::what() const throw() {
 }
 
 AForm const	&AForm::operator=(AForm const &rsc) {
+	std::cout << "Operator = AForm called" << std::endl;
 	this->_sign = rsc.getSign();
+	
 	return (*this);
 }
 

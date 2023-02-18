@@ -1,13 +1,18 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubbery", 145, 137) {
+	std::cout << "DEFAULT CONSTRUCTOR called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	AForm("shrubbery", 145, 137) {
+	std::cout << "Paramter constructor called" << std::endl;
 	this->_target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) :
+		AForm(rsc.getName(), rsc.getGradeSign(), rsc.getGradeExec())
+{
+	std::cout << "Copy constructor called" << std::endl;
 	*this = rsc;
 }
 
@@ -33,7 +38,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		std::string		fileName;
 		
 		fileName = this->_target + "_shrubbery";
-		writeFile.open (fileName, std::fstream::in | std::fstream::out | std::fstream::trunc);
+		writeFile.open (fileName.c_str(), std::fstream::in | std::fstream::out | std::fstream::trunc);
 		if (writeFile.fail()){
 			throw FileFailOpenException();
 		}
@@ -45,6 +50,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 }
 
 ShrubberyCreationForm const	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rsc) {
+	std::cout << "Operator = called" << std::endl;
+	this->setSign(rsc.getSign());
 	this->_target = rsc.getTarget();
 	return (*this);
 }
