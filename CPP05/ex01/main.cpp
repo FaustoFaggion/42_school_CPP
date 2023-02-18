@@ -133,8 +133,8 @@ std::cout << "\n-------------Form high to Bureaucrat signForm---------------\n" 
 		form = new Form("form", 1, 87);
 		std::cout << *form << std::endl;
 		soLove->signForm(*form);
-		form->beSigned(*soLove);
 		std::cout << "PAREI AQUI" << std::endl;
+		form->beSigned(*soLove);
 		delete soLove;
 		delete form;
 	}

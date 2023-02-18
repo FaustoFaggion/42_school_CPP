@@ -9,9 +9,9 @@ AForm::AForm(std::string name, int gradeSign, int gradeExec) :	_name(name),
 																_gradeSign(gradeSign),
 																_gradeExec(gradeExec),
 																_sign(false) {
-	if (gradeSign < 1)
+	if (gradeExec < 1 || gradeSign < 1)
 		throw GradeTooHighException();
-	if (gradeSign > 150)
+	if (gradeExec < 1 || gradeSign > 150)
 		throw GradeTooLowException();
 }
 
