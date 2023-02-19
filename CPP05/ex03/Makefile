@@ -1,4 +1,4 @@
-NAME		=	form3
+NAME		=	a.out
 CC			=	c++
 
 FLAGS		=	-Wall -Wextra -Werror  -std=c++98 -g3
