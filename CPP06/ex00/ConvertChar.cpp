@@ -20,7 +20,7 @@ ConvertChar::ConvertChar(int c) {
 
 ConvertChar::ConvertChar(float c) {
 	std::cout << "char: ";
-	if (c / (int)c == 1) {
+	if (c == static_cast<int>(c)) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
 		else if ((c >= 33 && c <= 126) )
@@ -34,7 +34,7 @@ ConvertChar::ConvertChar(float c) {
 
 ConvertChar::ConvertChar(double c) {
 	std::cout << "char: ";
-	if (c / (int)c == 1) {
+	if (c == static_cast<int>(c)) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
 		else if ((c >= 33 && c <= 126) )
