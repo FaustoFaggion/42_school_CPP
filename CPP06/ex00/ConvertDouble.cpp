@@ -15,12 +15,18 @@ ConvertDouble::ConvertDouble(int c) {
 
 ConvertDouble::ConvertDouble(float c) {
 	std::cout << "double: ";
-	std::cout << static_cast<double>(c) << "" << std::endl;
+	if (c == static_cast<int>(c))
+		std::cout << static_cast<double>(c) << ".0" << std::endl;
+	else
+		std::cout << static_cast<double>(c) << "" << std::endl;
 }
 
-ConvertDouble::ConvertDouble(double c) {	
+ConvertDouble::ConvertDouble(double c) {
 	std::cout << "double: ";
-	std::cout << static_cast<double>(c) << "" << std::endl;
+	if (c == static_cast<int>(c))
+		std::cout << static_cast<double>(c) << ".0" << std::endl;
+	else
+		std::cout << static_cast<double>(c) << std::endl;
 }
 
 ConvertDouble::ConvertDouble(ConvertDouble &rsc){

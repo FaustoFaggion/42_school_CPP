@@ -15,13 +15,21 @@ ConvertFloat::ConvertFloat(int c) {
 
 ConvertFloat::ConvertFloat(float c) {
 	std::cout << "float: ";
-	std::cout << c << "f" << std::endl;
+	if (c == static_cast<int>(c))
+		std::cout << c << ".0f" << std::endl;
+	else
+		std::cout << c << "f" << std::endl;
 }
 
 ConvertFloat::ConvertFloat(double c) {	
 	std::cout << "float: ";
-	if ((c >= 1.17549e-038  && c <= 3.40282e+038) || c == 0)
-		std::cout << static_cast<float>(c) << "f" << std::endl;
+	if ((c >= 1.17549e-038  && c <= 3.40282e+038) || c == 0){
+
+		if (c == static_cast<int>(c))
+			std::cout << static_cast<float>(c) << ".0f" << std::endl;
+		else
+			std::cout << c << "f" << std::endl;
+	}
 	else {
 		std::cout << "conversion is impossible" << std::endl;
 	}
