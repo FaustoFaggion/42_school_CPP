@@ -10,7 +10,6 @@ int    main(void) {
         std::cout << "\n----------CAT AND DOG INSTANCE---------\n";
         Cat        cat;
         Dog        dog;
-
         std::cout << "\n----------MAKESOUND LOOP---------\n";
         for (size_t i = 0; i < 10; i++)
         {

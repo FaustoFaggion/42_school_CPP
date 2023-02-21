@@ -31,6 +31,21 @@ int	DetectType::verify() {
 	if (this->getInput().compare("nan") == 0) {
 		return (NAN);
 	}
+		if (this->getInput().compare("+inf") == 0) {
+		return (PINF);
+	}
+	if (this->getInput().compare("-inf") == 0) {
+		return (MINF);
+	}
+	if (this->getInput().compare("nanf") == 0) {
+		return (NANF);
+	}
+	if (this->getInput().compare("+inff") == 0) {
+		return (PINF);
+	}
+	if (this->getInput().compare("-inff") == 0) {
+		return (MINFF);
+	}
 	if (this->getInput().length() == 1 && std::isalpha(this->getInput()[0])) {
 		return (CHAR);
 	}

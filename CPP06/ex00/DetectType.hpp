@@ -30,7 +30,12 @@ class	DetectType {
 		FLOAT,
 		DOUBLE,
 		IMPOSSIBLE,
-		NAN
+		NAN,
+		MINF,
+		PINF,
+		NANF,
+		MINFF,
+		PINFF
 	};
 };
 

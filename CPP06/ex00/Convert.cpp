@@ -43,7 +43,6 @@ Convert::Convert(const char * input) : DetectType(input) {
 	}
 	else if (idx == DOUBLE) {
 		this->ld = std::strtold(this->getInput().c_str(), NULL);
-		std::cout << "ld conversion: " << ld << std::endl;
 		if ((this->ld >= 2.22507e-308  && this->ld <= 1.79769e+308) || ld == 0) {
 			this->d = std::strtod(this->getInput().c_str(), NULL);
 			ConvertChar(this->d);
@@ -60,6 +59,36 @@ Convert::Convert(const char * input) : DetectType(input) {
 		std::cout << "int: conversion is impossible" << std::endl;
 		std::cout << "float: nanf" << std::endl;
 		std::cout << "double: nan" << std::endl;
+	}
+	else if (idx == NANF) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else if (idx == MINF) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
+	else if (idx == PINF) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+	}
+	else if (idx == MINFF) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
+	else if (idx == PINFF) {
+		std::cout << "char: conversion is impossible" << std::endl;
+		std::cout << "int: conversion is impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
 	}
 	else if (idx == IMPOSSIBLE)
 		std::cout << "type conversion is impossible" << std::endl;
