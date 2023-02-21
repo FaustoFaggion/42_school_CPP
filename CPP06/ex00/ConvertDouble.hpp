@@ -2,6 +2,7 @@
 #define CONVERTDOUBLE_HPP
 
 #include "DetectType.hpp"
+#include <iomanip>
 
 class ConvertDouble {
 

@@ -1,0 +1,89 @@
+char: conversion is impossible
+int: conversion is impossible
+float: nanf
+double: nan
+
+char: conversion is impossible
+int: conversion is impossible
+float: nanf
+double: nan
+
+char: conversion is impossible
+int: conversion is impossible
+float: +inff
+double: +inf
+
+char: conversion is impossible
+int: conversion is impossible
+float: +inff
+double: +inf
+
+char: conversion is impossible
+int: conversion is impossible
+float: -inff
+double: -inf
+
+char: conversion is impossible
+int: conversion is impossible
+float: -inff
+double: -inf
+
+test 42
+char: *
+int: 42
+float: 42.0f
+double: 42.0
+
+test 42.0
+char: *
+int: 42
+float: 42.0f
+double: 42.0
+
+test 42.0f
+char: *
+int: 42
+float: 42.0f
+double: 42.0
+
+test a
+char: a
+int: 97
+float: 97.0f
+double: 97.0
+
+test \
+type conversion is impossible
+
+test string
+type conversion is impossible
+
+test max int
+Invalid Argument
+
+test min int
+Invalid Argument
+
+test -42.2f
+Invalid Argument
+
+test -42
+char: conversion is impossible
+int: -42
+float: -42.0f
+double: -42.0
+
+test -42.5
+Invalid Argument
+
+test 42.55555555f
+char: conversion is impossible
+int: 42
+float: 42.6f
+double: 42.6
+
+ test 42.55555555
+char: conversion is impossible
+int: 42
+float: 42.6f
+double: 42.6

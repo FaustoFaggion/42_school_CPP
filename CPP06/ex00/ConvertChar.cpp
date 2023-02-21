@@ -24,7 +24,10 @@ ConvertChar::ConvertChar(float c) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
 		else if ((c >= 33 && c <= 126) )
+		{
+			std::cout.precision(1);
 			std::cout << static_cast<char>(c) << std::endl;
+		}
 		else
 			std::cout << "conversion is impossible" << std::endl;
 	}
@@ -37,8 +40,11 @@ ConvertChar::ConvertChar(double c) {
 	if (c == static_cast<int>(c)) {
 		if ((c >= 0 && c <= 32))
 			std::cout << "Non displayable" << std::endl;
-		else if ((c >= 33 && c <= 126) )
+		else if ((c >= 33 && c <= 126))
+		{
+			std::cout.precision(1);
 			std::cout << static_cast<char>(c) << std::endl;
+		}
 		else
 			std::cout << "conversion is impossible" << std::endl;
 	}

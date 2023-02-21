@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include <cstdlib>
+#include <limits>
 
 
 class	DetectType {

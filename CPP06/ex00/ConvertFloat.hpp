@@ -2,6 +2,7 @@
 #define CONVERTFLOAT_HPP
 
 #include "DetectType.hpp"
+#include <iomanip>
 
 class ConvertFloat {
 

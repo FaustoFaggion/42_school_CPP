@@ -52,6 +52,8 @@ int	DetectType::verify() {
 	else {
 		int	flag = 0;
 		for (int i = 0; i < (int)this->getInput().length(); i++) {
+			if (i == 0 && (this->getInput()[i] == '+' || this->getInput()[i] == '-'))
+				continue;
 			if (!std::isdigit(this->getInput()[i])) {
 				if (this->getInput()[i] == '.') {
 					if (flag == 0 && this->getInput()[i + 1] != '\0')
