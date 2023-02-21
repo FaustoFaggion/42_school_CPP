@@ -1,13 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("robotomy request", 145, 137) {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	AForm("shrubbery", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	AForm("shrubbery request", 145, 137) {
 	this->_target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) : AForm() {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) :
+		AForm(rsc.getName(), rsc.getGradeSign(), rsc.getGradeExec()) {
 	*this = rsc;
 }
 
@@ -33,7 +34,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		std::string		fileName;
 		
 		fileName = this->_target + "_shrubbery";
-		writeFile.open (fileName, std::fstream::in | std::fstream::out | std::fstream::trunc);
+		writeFile.open (fileName.c_str(), std::fstream::in | std::fstream::out | std::fstream::trunc);
 		if (writeFile.fail()){
 			
 		}
@@ -45,6 +46,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 }
 
 ShrubberyCreationForm const	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rsc) {
+	this->setSign(rsc.getSign());
 	this->_target = rsc.getTarget();
 	return (*this);
 }

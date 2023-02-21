@@ -1,18 +1,15 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubbery", 145, 137) {
-	std::cout << "DEFAULT CONSTRUCTOR called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :	AForm("shrubbery", 145, 137) {
-	std::cout << "Paramter constructor called" << std::endl;
 	this->_target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &rsc) :
 		AForm(rsc.getName(), rsc.getGradeSign(), rsc.getGradeExec())
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = rsc;
 }
 

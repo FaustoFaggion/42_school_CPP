@@ -41,10 +41,6 @@ bool const	&AForm::getSign() const {
 	return (this->_sign);
 }
 
-void	AForm::setSign(int sign) {
-	this->_sign = sign;
-}
-
 void	AForm::setSign(bool	sign) {
 	this->_sign = sign;
 }

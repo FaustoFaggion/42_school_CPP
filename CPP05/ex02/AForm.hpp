@@ -26,7 +26,6 @@ class AForm {
 		int const			&getGradeSign() const;
 		int const			&getGradeExec() const;
 		void				setName(std::string name);
-		void				setSign(int sign);
 		void				setSign(bool sign);
 		
 		void				beSigned(Bureaucrat const &responsable);
