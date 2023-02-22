@@ -30,7 +30,7 @@ Base *generate(void) {
 void identify(Base* p) {
 	if (dynamic_cast<BaseA*>(p))
 		std::cout << "A" << std::endl;
-	else if (dynamic_cast<BaseB*>(p))
+	else if (dynamic_cast<BaseB* >(p))
 		std::cout << "B" << std::endl;
 	else if (dynamic_cast<BaseC*>(p))
 		std::cout << "C" << std::endl;
@@ -40,20 +40,22 @@ void identify(Base& p) {
 	try {
 		BaseA a = dynamic_cast<BaseA&>(p);
 		std::cout << "Type: A" << std::endl;
+		static_cast<void>(a);
 	}
 	catch (const std::exception& e1) {
 	}
 	try {
 		BaseB b = dynamic_cast<BaseB&>(p);
 		std::cout << "Type: B" << std::endl;
+		static_cast<void>(b);
 	}
 	catch (const std::exception& e2) {
 	}
 	try {
 		BaseC c = dynamic_cast<BaseC&>(p);
 		std::cout << "Type: C" << std::endl;
+		static_cast<void>(c);
 	}
 	catch (const std::exception& e3) {
-		std::cerr << "Invalid reference" << std::endl;
 	}
 }
