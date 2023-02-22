@@ -20,7 +20,9 @@ ConvertFloat::ConvertFloat(float c) {
 
 ConvertFloat::ConvertFloat(double c) {
 	std::cout << "float: ";
-	if ((c >= 1.17549e-038  && c <= 3.40282e+038) || c == 0)
+	if ((c >= 1.17549e-038  && c <= 3.40282e+038)
+	|| (c >= -3.40282e+038  && c <= -1.17549e-038)
+	|| c == 0)
 		std::cout << std::fixed << std::setprecision(1) << c << "f" << std::endl;
 }
 

@@ -30,7 +30,9 @@ Convert::Convert(const char * input) : DetectType(input) {
 	}
 	else if (idx == FLOAT) {
 		this->ld = std::strtold(this->getInput().c_str(), NULL);
-		if ((this->ld >= 1.17549e-038  && this->ld <= 3.40282e+038) || ld == 0) {
+		if ((this->ld >= 1.17549e-038  && this->ld <= 3.40282e+038)
+		||	(this->ld >= -3.40282e+038  && this->ld <= -1.17549e-038)
+		|| ld == 0) {
 			this->f = std::strtof(this->getInput().c_str(), NULL);
 			ConvertChar(this->f);
 			ConvertInt(this->f);
@@ -43,7 +45,9 @@ Convert::Convert(const char * input) : DetectType(input) {
 	}
 	else if (idx == DOUBLE) {
 		this->ld = std::strtold(this->getInput().c_str(), NULL);
-		if ((this->ld >= 2.22507e-308  && this->ld <= 1.79769e+308) || ld == 0) {
+		if ((this->ld >= 2.22507e-308  && this->ld <= 1.79769e+308)
+		|| (this->ld >= -1.79769e+308  && this->ld <= -2.22507e-308)
+		|| ld == 0) {
 			this->d = std::strtod(this->getInput().c_str(), NULL);
 			ConvertChar(this->d);
 			ConvertInt(this->d);

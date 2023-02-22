@@ -51,3 +51,12 @@ valgrind --leak-check=full --show-leak-kinds=all ./convert 42.55555f
 echo 
 echo " test 42.55555555"
 valgrind --leak-check=full --show-leak-kinds=all ./convert 42.55555
+echo 
+echo " test 0"
+valgrind --leak-check=full --show-leak-kinds=all ./convert 0
+echo 
+echo " test 0.0000"
+valgrind --leak-check=full --show-leak-kinds=all ./convert 0.0000
+echo 
+echo " test 0.00f"
+valgrind --leak-check=full --show-leak-kinds=all ./convert 0.000f

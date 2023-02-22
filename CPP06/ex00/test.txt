@@ -65,7 +65,10 @@ test min int
 Invalid Argument
 
 test -42.2f
-Invalid Argument
+char: conversion is impossible
+int: -42
+float: -42.2f
+double: -42.2
 
 test -42
 char: conversion is impossible
@@ -74,7 +77,10 @@ float: -42.0f
 double: -42.0
 
 test -42.5
-Invalid Argument
+char: conversion is impossible
+int: -42
+float: -42.5f
+double: -42.5
 
 test 42.55555555f
 char: conversion is impossible
@@ -87,3 +93,21 @@ char: conversion is impossible
 int: 42
 float: 42.6f
 double: 42.6
+
+ test 0
+char: Non displayable
+int: 0
+float: 0.0f
+double: 0.0
+
+ test 0.0000
+char: Non displayable
+int: 0
+float: 0.0f
+double: 0.0
+
+ test 0.00f
+char: Non displayable
+int: 0
+float: 0.0f
+double: 0.0
