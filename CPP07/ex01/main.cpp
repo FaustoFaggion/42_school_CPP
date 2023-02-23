@@ -1,5 +1,18 @@
 #include "iter.hpp"
 
+template<typename T>
+void	show(T& value) {
+	std::cout << "&value" << std::endl;
+	std::cout << value << std::endl;
+}
+
+template<typename T>
+void	show_ptr(T *value) {
+	std::cout << "*value p" << std::endl;
+	std::cout << *value << std::endl;
+}
+
+
 int	main(void) {
 
 	char		c[2] = {'A', 'B'};
@@ -9,15 +22,13 @@ int	main(void) {
 	int			a = 2;
 	int			*ptr[5] = {&a, &a, &a, &a, &a};
 
-	iter<int*>(ptr, 4, show<int*>);
-	iter<std::string>(str, 2, show<std::string>);
-	iter<int>(array, 5, show<int>);
-	iter<int>(array, 5, sum<int>);
-	iter<int>(array, 5, show<int>);
+	iter(c, 2, &show);
+	std::cout << "\n";
+	iter(str, 2, &show);
+	std::cout << "\n";
+	iter(array, 5, &show);
+	std::cout << "\n";
+	iter(ptr, 5, &show_ptr);
 	
-	iter<char>(c, 2, show<char>);
-	iter<char>(c, 2, sum<char>);
-	iter<char>(c, 2, show<char>);
-
 	return (0);
 }
