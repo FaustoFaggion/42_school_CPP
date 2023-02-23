@@ -53,7 +53,7 @@ int	main(void) {
 		*p = 5;
 
 		std::cout << *p << std::endl;
-		//int		*ip = static_cast<int*>(&c);
+		int		*ip = static_cast<int*>(&c);
 	}
 
 
