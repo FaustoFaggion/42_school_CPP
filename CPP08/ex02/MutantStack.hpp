@@ -7,6 +7,11 @@
 
 template <typename T>
 class MutantStack : public std::stack<T> {
+	
+	public:
+		typedef typename std::deque<T>::iterator			iterator;
+		typedef typename std::deque<T>::reverse_iterator	reverse_iterator;
+	
 	private:
 		std::stack<T>	mutant;
 	public:
