@@ -40,11 +40,10 @@ unsigned int	Span::shortestSpan() {
 		throw ClassNoNumbersException();
 	
 	int					ss;
-	std::vector<int>	v(this->_vec);
-
-	std::sort(v.begin(), v.end());
-	ss = (v[1] - v[0]);
-	for (std::vector<int>::iterator it = v.begin(); it != v.end() - 1; it++) {
+	
+	std::sort(_vec.begin(), _vec.end());
+	ss = (_vec[1] - _vec[0]);
+	for (std::vector<int>::iterator it = _vec.begin(); it != _vec.end() - 1; it++) {
 		if ((int)(*(it + 1) - *it) < ss) {
 			ss = (*(it + 1) - *it);
 		}
@@ -58,32 +57,9 @@ unsigned int	Span::longestSpan()
 		throw ClassNoNumbersException();
 	
 	unsigned int		ls;
-	std::vector<int> v(this->_vec);
-	
-	std::sort(v.begin(), v.end());
 
-	// for (unsigned int i = 0; i < v.size(); i++)
-	// 	std::cout << v[i] << " ";
-	// std::cout << std::endl;
+	std::sort(_vec.begin(), _vec.end());
 
-	ls = (v.back() - v.front());
+	ls = (_vec.back() - _vec.front());
 	return (ls);
-}
-
-int		Span::operator[](unsigned int i) const
-{
-	if (_vec.size() <= i)
-	{
-		std::out_of_range e("Index out of range");
-		throw e;
-	}
-	return (_vec[i]);
-}
-
-std::ostream	&operator<<(std::ostream &lhs, Span &rhs) {
-	for (unsigned int i = 0; i < rhs.getN(); i++) {
-		std::cout << rhs[i] << " " << std::endl;
-	}
-	return (lhs);
-
 }

@@ -40,7 +40,7 @@ int	main(void)
 		
 		for (int i = 0; i < 1000; i++)
 		{
-			vec.push_back(i + 10);
+			vec.push_back(i);
 		}
 		
 		try

@@ -43,9 +43,6 @@ class Span {
 		unsigned int		shortestSpan();
 		unsigned int		longestSpan();
 
-		int					operator[](unsigned int i) const;
 };
-
-std::ostream	&operator<<(std::ostream &lhs, Span &rhs);
 
 #endif
