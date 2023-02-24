@@ -21,7 +21,7 @@ int main(void) {
 
 	std::cout << "VEC\n" << std::endl;
 	try {
-		easyfind(vec, 13);
+		easyfind(vec, 0);
 	}
 	catch(std::exception &e) {
 		std::cout << e.what() << std::endl;

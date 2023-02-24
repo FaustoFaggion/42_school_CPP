@@ -7,6 +7,7 @@
 #include <list>
 #include <queue>
 #include <exception>
+#include <algorithm>
 
 class	NotFoundException : public std::exception {
 	const char		*what() const throw() {
@@ -17,13 +18,12 @@ class	NotFoundException : public std::exception {
 template<typename T>
 void	easyfind(T &value1, int value2) {
 	
-	for (typename T::iterator it = value1.begin(); it != value1.end(); it++) {
-			if (*it == value2) {
-				std::cout << *it << std::endl;
-				return ;
-			}
-	}
-	throw NotFoundException();
+	typename T::iterator it = std::find(value1.begin(), value1.end(), value2);
+
+	if (it == value1.end())
+		throw NotFoundException();
+	else
+		std::cout << *it << std::endl;
 }
 
 #endif
