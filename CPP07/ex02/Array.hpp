@@ -14,6 +14,7 @@ class	Array {
 
 	public:
 		Array() : _arr(NULL), _size(0) { }
+		
 		Array(unsigned int n)
 		{
 			this->_size = n;
@@ -21,8 +22,15 @@ class	Array {
 			for (unsigned int i = 0; i < n; i++)
 			this->_arr[i] = T(); 
 		}
+		
 		~Array() {delete[] this->_arr;}
-		Array(Array const &rhs) { *this = rhs;}
+		
+		Array(Array const &rhs)
+		{
+			this->_arr = NULL;
+			*this = rhs;
+		}
+		
 		Array	&operator=(Array const &rhs)
 		{
 			if (this != &rhs)
