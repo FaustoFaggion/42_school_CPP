@@ -34,6 +34,7 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << "Destructor " << this->getName()  << " called" << std::endl;
 }
 
+
 std::string	ClapTrap::getName() {
 	return (this->name);
 }

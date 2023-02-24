@@ -37,7 +37,6 @@ class Span {
 		~Span();
 
 		unsigned int		getN() const;
-		int					getVec(int ld) const;
 
 		void				addNumber(int n);
 		void				addManyNumbers(std::vector<int>::iterator first, std::vector<int>::iterator last);
