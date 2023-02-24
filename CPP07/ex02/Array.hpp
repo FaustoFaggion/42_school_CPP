@@ -20,7 +20,7 @@ class	Array {
 			this->_size = n;
 			this->_arr = new T[this->size()];
 			for (unsigned int i = 0; i < n; i++)
-			this->_arr[i] = T(); 
+				this->_arr[i] = T(); 
 		}
 		
 		~Array() {delete[] this->_arr;}

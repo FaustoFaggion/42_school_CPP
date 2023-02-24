@@ -1,64 +1,89 @@
 #include "Span.hpp"
 
-Span::Span() : _maxSize(0) {
+Span::Span() : _N(0) {
 }
 
-Span::Span(unsigned int maxSize) : _maxSize(maxSize) {
-	this->_vec.reserve(maxSize);
+Span::Span(unsigned int N) : _N(N) {
+	this->_vec.reserve(N);
 }
 
 Span::~Span() {
 }
 
-unsigned int	Span::getMaxSize() const {
-	return (this->_maxSize);
+unsigned int	Span::getN() const {
+	return (_N);
 }
-
-int	Span::getVec(unsigned int ld) const {
-	return (this->_vec[ld]);
-}
-
 
 void	Span::addNumber(int n) {
 
-	if (_vec.size() < this->_maxSize) {
+	if (_vec.size() < _N) {
 		this->_vec.push_back(n);
 	}
 	else
 		throw ClassFullException();
 }
 
-void	Span::shortestSpan() {
+void	Span::addManyNumbers(std::vector<int>::iterator first, std::vector<int>::iterator last)
+{
+	if (static_cast<long unsigned int>(std::distance(first, last)) > (_vec.size() - _vec.capacity()))
+		throw ClassToManyException();
 	
-	unsigned int		sh;
+	for (; first != last; ++first)
+	{
+		this->addNumber(*first);
+	}
+}
+
+unsigned int	Span::shortestSpan() {
+	
+	if (_vec.size() <=1)
+		throw ClassNoNumbersException();
+	
+	int					ss;
 	std::vector<int>	v(this->_vec);
 
 	std::sort(v.begin(), v.end());
-	sh = (v[1] - v[0]);
+	ss = (v[1] - v[0]);
 	for (std::vector<int>::iterator it = v.begin(); it != v.end() - 1; it++) {
-		if ((unsigned int)(*(it + 1) - *it) < sh) {
-			sh = (*(it + 1) - *it);
+		if ((int)(*(it + 1) - *it) < ss) {
+			ss = (*(it + 1) - *it);
 		}
 	}
-	std::cout << sh << std::endl;
+	return (ss);
 }
 
-void	Span::longestSpan() {
+unsigned int	Span::longestSpan()
+{
+	if (_vec.size() <=1)
+		throw ClassNoNumbersException();
 	
+	unsigned int		ls;
 	std::vector<int> v(this->_vec);
 	
 	std::sort(v.begin(), v.end());
 
-	for (unsigned int i = 0; i < v.size(); i++)
-		std::cout << v[i] << " ";
-	std::cout << std::endl;
+	// for (unsigned int i = 0; i < v.size(); i++)
+	// 	std::cout << v[i] << " ";
+	// std::cout << std::endl;
 
-	std::cout << (v.back() - v.front()) << std::endl;
+	ls = (v.back() - v.front());
+	return (ls);
+}
+
+int		Span::operator[](unsigned int i) const
+{
+	if (_vec.size() <= i)
+	{
+		std::out_of_range e("Index out of range");
+		throw e;
+	}
+	return (_vec[i]);
 }
 
 std::ostream	&operator<<(std::ostream &lhs, Span &rhs) {
-	for (unsigned int i = 0; i < rhs.getMaxSize(); i++) {
-		std::cout << rhs.getVec(i) << " " << std::endl;
+	for (unsigned int i = 0; i < rhs.getN(); i++) {
+		std::cout << rhs[i] << " " << std::endl;
 	}
 	return (lhs);
+
 }

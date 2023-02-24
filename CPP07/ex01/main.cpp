@@ -28,6 +28,8 @@ int	main(void) {
 	std::cout << "\n";
 	iter(array, 5, &show);
 	std::cout << "\n";
+	iter(ptr, 5, &show);
+	std::cout << "\n";
 	iter(ptr, 5, &show_ptr);
 	
 	return (0);

@@ -27,7 +27,17 @@ int main(void) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "LIST\n" << std::endl;
-	easyfind(lis, 12);
+	try {
+		easyfind(lis, 12);
+	}
+	catch(std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "QUEUE\n" << std::endl;
-	easyfind(lis, 102);
+	try {
+		easyfind(lis, 102);
+	}
+	catch(std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }

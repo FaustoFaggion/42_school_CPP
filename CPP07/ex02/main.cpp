@@ -41,7 +41,7 @@ int	main(void) {
 
 	std::cout << "\n\n";
 	try {
-		str[4] = "ss";
+		str[-4] = "ss";
 		str[0] = "AA";
 		str[1] = "BB";
 		str[2] = "CC";
@@ -52,4 +52,9 @@ int	main(void) {
 	std::cout << "\n";
 	std::cout << str << std::endl;
 	std::cout << "str size: " << str.size() << std::endl;
+
+	Array<int> d;
+	std::cout << d << std::endl;
+	std::cout << "d size: " <<  d.size() << std::endl;
+
 }
