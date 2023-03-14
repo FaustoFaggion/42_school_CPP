@@ -37,6 +37,8 @@
 		"optional": "cpp",
 		"sstream": "cpp",
 		"tuple": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"cstring": "cpp",
+		"map": "cpp"
 	}
 }

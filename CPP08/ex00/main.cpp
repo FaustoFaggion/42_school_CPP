@@ -5,6 +5,7 @@ int main(void) {
 	std::vector<int> vec;
 	std::list<int> lis;
 	std::queue<int> que;
+
 	vec.reserve(6);
 
 	for (long unsigned int i = 0; i < 10; i++) {
@@ -21,7 +22,7 @@ int main(void) {
 
 	std::cout << "VEC\n" << std::endl;
 	try {
-		easyfind(vec, 0);
+		easyfind(vec, 13);
 	}
 	catch(std::exception &e) {
 		std::cout << e.what() << std::endl;
