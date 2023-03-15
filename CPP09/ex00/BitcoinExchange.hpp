@@ -24,11 +24,17 @@ class BitcoinExchange
 		};
 	private:
 		std::map<std::string, float>	csv;
+		float							value;
 
 	public:
 		BitcoinExchange();
 		BitcoinExchange(std::string txt_file);
 
 		void	get_csv_data();
-		void	validate_line(std::string line);
+		void	get_txt_data(std::string file);
+		int		validate_line(std::string line);
+		int		validate_char(std::string line, std::string tmp, std::string c);
+		void	exchange(std::string line);
+
+
 };

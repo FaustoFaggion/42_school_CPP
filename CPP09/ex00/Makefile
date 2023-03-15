@@ -36,6 +36,3 @@ run:	$(NAME)
 
 valgrind: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
-
-valgrind_: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
