@@ -1,11 +1,31 @@
 #include "BitcoinExchange.hpp"
 #include <iomanip>
 
+BitcoinExchange::BitcoinExchange() { }
+
 BitcoinExchange::BitcoinExchange(std::string file)
 {
 	get_csv_data();
 	get_txt_data(file);
 
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &rhs)
+{
+	*this = rhs;
+}
+
+BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &rhs)
+{
+	this->csv = rhs.getCsv();
+	return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange() { }
+
+std::map<std::string, float>	BitcoinExchange::getCsv() const
+{
+	return (csv);
 }
 
 void	BitcoinExchange::get_csv_data(void)
