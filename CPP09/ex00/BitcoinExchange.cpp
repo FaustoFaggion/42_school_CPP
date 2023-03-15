@@ -157,12 +157,11 @@ void	BitcoinExchange::exchange(std::string line)
 	float		result;
 
 	date = line.substr(0, 10);
-	
 	std::map<std::string, float>::iterator	it;
 	it = csv.upper_bound(date);
 	it--;
 	result = value * (*it).second;
 	line = line.replace(11, 1, "=>");
 	std::cout << line << " = " << result << std::endl;
-
+	(void)result;
 }

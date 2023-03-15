@@ -12,20 +12,6 @@
 
 class BitcoinExchange
 {
-	public:
-		class BcException : public std::exception
-		{
-			private:
-				std::string msg;
-			public:
-				BcException(const std::string& msg) : msg(msg) { }
-				virtual ~BcException() throw() { }
-
-				virtual const char* what() const throw()
-				{
-					return msg.c_str();
-				}
-		};
 	private:
 		std::map<std::string, float>	csv;
 		float							value;
