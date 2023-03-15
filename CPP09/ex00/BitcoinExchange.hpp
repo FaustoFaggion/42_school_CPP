@@ -1,3 +1,7 @@
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
+
 #include <map>
 #include <fstream>
 #include <string>
@@ -35,6 +39,6 @@ class BitcoinExchange
 		int		validate_line(std::string line);
 		int		validate_char(std::string line, std::string tmp, std::string c);
 		void	exchange(std::string line);
-
-
 };
+
+#endif

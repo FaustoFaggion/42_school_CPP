@@ -163,7 +163,6 @@ void	BitcoinExchange::exchange(std::string line)
 	it--;
 	result = value * (*it).second;
 	line = line.replace(11, 1, "=>");
-	line += " = ";
-	std::cout << line << result << std::endl;
+	std::cout << line << " = " << result << std::endl;
 
 }
