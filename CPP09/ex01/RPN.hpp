@@ -1,13 +1,43 @@
 #ifndef RPN_HPP
 #define RPN_HPP
 
+#include <stack>
+#include <string.h>
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+
 class RPN
 {
 	private:
-		std::stack	exp;
+		class SpanException : public std::exception
+	{
+		private:
+			std::string msg;
+		public:	
+			SpanException(const std::string& msg) : msg(msg){ }
+			virtual ~SpanException() throw();
+			virtual const char* what() const throw()
+			{
+				return msg.c_str();
+			};
+	};
+
+	private:
+		std::stack<std::string>	exp;
+		std::string				expression;
 
 	public:
-		
+		RPN();
+		RPN(std::string expression);
+		RPN(const RPN &rhs);
+		~RPN();
+
+		RPN&	operator=(const RPN &rhs);
+
+		std::stack<std::string>	getExp() const;
+
+		int						create_stack(std::string expression);
 	
 };
 
