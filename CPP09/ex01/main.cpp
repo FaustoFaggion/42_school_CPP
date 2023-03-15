@@ -10,7 +10,10 @@ int	main(int argc, char *argv[])
 	std::string	str(argv[1]);
 	RPN	e(str);
 
-	if (e.create_stack(str) == 1)
+	if (e.chk_str(str) == 1)
+		return (1);
+	
+	if (e.solve() == 1)
 		return (1);
 
 	return (0);

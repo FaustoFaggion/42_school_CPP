@@ -24,7 +24,7 @@ class RPN
 	};
 
 	private:
-		std::stack<std::string>	exp;
+		std::stack<int>			stk;
 		std::string				expression;
 
 	public:
@@ -35,9 +35,10 @@ class RPN
 
 		RPN&	operator=(const RPN &rhs);
 
-		std::stack<std::string>	getExp() const;
+		std::stack<int>	getStk() const;
 
-		int						create_stack(std::string expression);
+		int						chk_str(std::string expression);
+		int					solve();
 	
 };
 

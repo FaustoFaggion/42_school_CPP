@@ -16,84 +16,97 @@ RPN::~RPN(){ }
 
 RPN&	RPN::operator=(const RPN &rhs)
 {
-	this->exp = rhs.getExp();
+	this->stk = rhs.getStk();
 	return (*this);
 }
 
-std::stack<std::string>	RPN::getExp() const
+std::stack<int>	RPN::getStk() const
 {
-	return (this->exp);
+	return (this->stk);
 }
 
-int	RPN::create_stack(std::string expression)
+int	RPN::chk_str(std::string expression)
 {
 	size_t			i;
-	std::string		s;
 
 	if (expression.length() == 0)
 	{
-		std::cout << "Invalid expression 0" << std::endl;
+		std::cout << "Invalid expression" << std::endl;
 		return (1);
 	}
-	i = expression.length() - 1;
-
-	while (i > 1)
+	i = 0;
+	while (i < expression.length())
 	{
-		if (expression.at(i) != '+' && expression.at(i) != '-'
-			&& expression.at(i) != '/' && expression.at(i) != '*')
+		if (!strchr("+-*/ ", expression.at(i)) && !std::isdigit(expression.at(i)))
 		{
-			std::cout << "Invalid expression 8" << std::endl;
+			std::cout << "Invalid expression" << std::endl;
 			return (1);
 		}
-		this->exp.push(expression.substr(i, 1));
-		if (--i == 0)
+		if (std::isdigit(expression.at(i)))
 		{
-			std::cout << "Invalid expression 3" << std::endl;
-			return (1);
+			if ((i + 1) < expression.length() && std::isdigit(expression.at(i + 1)))
+			{
+				std::cout << "Invalid expression" << std::endl;
+				return (1);
+			}
 		}
-		if (expression.at(i) != ' ')
-		{
-			std::cout << "Invalid expression 2" << std::endl;
-			return (1);
-		}
-		if (--i == 0)
-		{
-			std::cout << "Invalid expression 3" << std::endl;
-			return (1);
-		}
-		if (!std::isdigit(expression.at(i)))
-		{
-			std::cout << "Invalid expression 4" << std::endl;
-			return (1);
-		}
-		this->exp.push(expression.substr(i, 1));
-		if (--i == 0)
-		{
-			std::cout << "Invalid expression 5" << std::endl;
-			return (1);
-		}
-		if (expression.at(i) != ' ')
-		{
-			std::cout << "Invalid expression 6" << std::endl;
-			return (1);
-		}
-		i--;
+		i++;
 	}
-	if (!std::isdigit(expression.at(i)))
-	{
-		std::cout << "Invalid expression 4" << std::endl;
-		return (1);
-	}
-	this->exp.push(expression.substr(i, 1));
-
-	while (!exp.empty())
-	{
-		std::cout << exp.top() << " ";
-		exp.pop();
-	}
+	this->expression = expression;
 	return (0);
 }
 
-// 8 + 9 * 2 - 4
+int	RPN::solve()
+{
+	size_t	i;
+	int x;
+	int y;
 
-// 8 9 + 2 * 4 -
+	i = 0;
+	x = 0;
+	while (i < expression.length())
+	{
+		if (expression.at(i) == ' ')
+			i++;
+		else if(std::isdigit(expression.at(i)))
+		{
+			stk.push(expression.at(i) - '0');
+			i++;
+		}
+		else if (expression.at(i) == '+' || expression.at(i) == '-'
+			|| expression.at(i) == '*' || expression.at(i) == '/')
+		{
+			if (stk.size() < 2)
+			{
+				std::cout << "Invalid expression at " << expression.at(i) << std::endl;
+				return (1);
+			}
+			y = stk.top(); stk.pop();
+			x = stk.top(); stk.pop();
+			if (expression.at(i) == '+')
+				x = x + y;
+			else if (expression.at(i) == '-')
+				x = x - y;
+			else if (expression.at(i) == '*')
+				x = x * y;
+			else if (expression.at(i) == '/')
+			{
+				if (y == 0)
+				{
+					std::cout << "Invalid expression" << std::endl;
+					return (1);
+				}
+				x = x / y;
+			}
+			stk.push(x);
+			i++;
+		}
+	}
+	if (stk.size() != 1)
+	{
+		std::cout << "Invalid expression" << std::endl;
+		return (1);
+	}
+	std::cout << x << "\n";
+	return (0);
+}
