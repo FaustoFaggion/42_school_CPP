@@ -27,14 +27,24 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe &rhs)
 	return (*this);
 }
 
-std::list<int>	PmergeMe::getLst() const
+std::list<int> const	&PmergeMe::getLst() const
 {
 	return (_lst);
 }
 
-std::deque<int>	PmergeMe::getDqe() const
+std::deque<int> const	&PmergeMe::getDqe() const
 {
 	return (_dqe);
+}
+
+timeval	const			&PmergeMe::getT_list() const
+{
+	return (t_lst);
+}
+
+timeval	const			&PmergeMe::getT_dqe() const
+{
+	return (t_dqe);
 }
 
 void	PmergeMe::create_containers(int argc, char *argv[])
@@ -47,43 +57,26 @@ void	PmergeMe::create_containers(int argc, char *argv[])
 		_lst.push_back(n);
 		_dqe.push_back(n);
 	}
-
-	std::list<int>::iterator	it1;
-	std::cout << "_lst: " << " ";
-	for (it1 = _lst.begin(); it1 != _lst.end(); it1++)
-	{
-		std::cout << *it1 << " ";
-	}
-
-	std::deque<int>::iterator	it2;
-	std::cout << "\n_dqe: " << " ";
-	for (it2 = _dqe.begin(); it2 != _dqe.end(); it2++)
-	{
-		std::cout << *it2 << " ";
-	}
-	std::cout << "\n";
 }
 
 void	PmergeMe::sort_containers()
 {
+	timeval	start;
+
+	gettimeofday(&start, NULL);
 	sort(_lst);
+	gettimeofday(&t_lst, NULL);
+	timersub(&t_lst, &start, &t_lst);
+
+	gettimeofday(&start, NULL);
 	sort(_dqe);
+	gettimeofday(&t_dqe, NULL);
+	timersub(&t_dqe, &start, &t_dqe);
 
-	std::list<int>::iterator	it1;
-	std::cout << "sorted _lst: " << " ";
-	for (it1 = _lst.begin(); it1 != _lst.end(); it1++)
-	{
-		std::cout << *it1 << " ";
-	}
-
-
-	std::deque<int>::iterator	it2;
-	std::cout << "\n_dqe: " << " ";
-	for (it2 = _dqe.begin(); it2 != _dqe.end(); it2++)
-	{
-		std::cout << *it2 << " ";
-	}
-	std::cout << "\n";
+	// std::cout << "After: ";
+	// std::list<int>::iterator it;
+	// for (it = _lst.begin(); it != _lst.end(); it++)
+	// 	std::cout << *it << " ";
 }
 
 template<typename T>

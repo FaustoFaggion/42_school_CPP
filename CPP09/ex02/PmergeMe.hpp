@@ -6,12 +6,15 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <sys/time.h>
 
 class PmergeMe {
 
 	private:
 		std::list<int>	_lst;
 		std::deque<int>	_dqe;
+		timeval			t_lst;
+		timeval			t_dqe;
 	
 	public:
 		PmergeMe();
@@ -19,19 +22,21 @@ class PmergeMe {
 		PmergeMe(const PmergeMe &rhs);
 		~PmergeMe();
 
-		PmergeMe&	operator=(const PmergeMe &rhs);
+		PmergeMe&				operator=(const PmergeMe &rhs);
 
-		std::list<int>	getLst() const;
-		std::deque<int>	getDqe() const;
+		std::list<int> const	&getLst() const;
+		std::deque<int> const	&getDqe() const;
+		timeval	const				&getT_list() const;
+		timeval	const				&getT_dqe() const;
 
-		void			create_containers(int argc, char *argv[]);
+		void					create_containers(int argc, char *argv[]);
 
-		void			sort_containers();
+		void					sort_containers();
 		
 		template<typename T>
-		void			sort(T &lst);
+		void					sort(T &lst);
 		template<typename T>
-		void			merge(T &left, T& right, T& c);
+		void					merge(T &left, T& right, T& c);
 };
 
 #endif
