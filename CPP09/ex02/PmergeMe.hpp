@@ -30,6 +30,8 @@ class PmergeMe {
 		
 		template<typename T>
 		void			sort(T &lst);
+		template<typename T>
+		void			merge(T &left, T& right, T& c);
 };
 
 #endif

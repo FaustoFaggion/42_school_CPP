@@ -87,50 +87,54 @@ void	PmergeMe::sort_containers()
 }
 
 template<typename T>
-void	PmergeMe::sort(T& lst)
+void	PmergeMe::sort(T& c)
 {
-	if (lst.size() <= 1)
+	if (c.size() <= 1)
 		return ;
 	
 	T	left;
 	T	right;
 
-	size_t	sz = lst.size();
+	size_t	sz = c.size();
 	for (size_t	i = 0; i < sz; i++)
 	{
-		if (i < lst.size() / 2)
-			left.push_back(lst.front());
+		if (i < c.size() / 2)
+			left.push_back(c.front());
 		else
-			right.push_back(lst.front());
-		lst.pop_front();
+			right.push_back(c.front());
+		c.pop_front();
 	}
 
 	sort(left);
 	sort(right);
 
+	merge(left, right, c);
+}
+
+template<typename T>
+void	PmergeMe::merge(T &left, T& right, T& c)
+{
 	while (!left.empty() && !right.empty())
 	{
 		if (left.front() <= right.front())
 		{
-			lst.push_back(left.front());
+			c.push_back(left.front());
 			left.pop_front();
 		}
 		else
 		{
-			lst.push_back(right.front());
+			c.push_back(right.front());
 			right.pop_front();
 		}
 	}
 	while (!left.empty())
 	{
-		lst.push_back(left.front());
+		c.push_back(left.front());
 		left.pop_front();
 	}
-
 	while (!right.empty())
 	{
-		lst.push_back(right.front());
+		c.push_back(right.front());
 		right.pop_front();
 	}
-
 }
