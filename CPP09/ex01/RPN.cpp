@@ -108,7 +108,9 @@ int	RPN::calculate(char c, int &x, int &y)
 	if (c == '+')
 		x = x + y;
 	else if (c == '-')
+	{
 		x = x - y;
+	}
 	else if (c == '*')
 		x = x * y;
 	else if (c == '/')
