@@ -14,7 +14,11 @@ class BitcoinExchange
 {
 	private:
 		std::map<std::string, float>	csv;
-		float							value;
+		float							_value;
+		bool							_leapyear;
+		int								_year;
+		int								_month;
+		int								_day;
 
 	public:
 		BitcoinExchange();
@@ -26,11 +30,19 @@ class BitcoinExchange
 
 		std::map<std::string, float>	getCsv() const;
 		
-		void			get_csv_data();
-		void			get_txt_data(std::string file);
+		void			exchange_data(std::string file);
+
+	private:
+		void			set_csv_data();
+		
 		int				validate_line(std::string line);
 		int				validate_char(std::string line, std::string tmp, std::string c);
 		void			exchange(std::string line);
+		
+		int				validate_year(std::string line);
+		int				validate_month(std::string line);
+		int				validate_day(std::string line);
+		int				validate_value(std::string line);
 };
 
 #endif

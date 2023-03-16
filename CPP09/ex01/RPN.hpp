@@ -37,8 +37,8 @@ class RPN
 
 		std::stack<int>	getStk() const;
 
-		int						chk_str(std::string expression);
-		int					solve();
+		int				chk_str(std::string expression);
+		int				solve();
 	
 };
 
