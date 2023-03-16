@@ -73,16 +73,17 @@ int	RPN::solve()
 			stk.push(expression.at(i) - '0');
 			i++;
 		}
-		else if (expression.at(i) == '+' || expression.at(i) == '-'
-			|| expression.at(i) == '*' || expression.at(i) == '/')
+		else if (strchr("+-*/", expression.at(i)))
 		{
 			if (stk.size() < 2)
 			{
 				std::cout << "Invalid expression at " << expression.at(i) << std::endl;
 				return (1);
 			}
-			y = stk.top(); stk.pop();
-			x = stk.top(); stk.pop();
+			y = stk.top();
+			stk.pop();
+			x = stk.top();
+			stk.pop();
 			if (expression.at(i) == '+')
 				x = x + y;
 			else if (expression.at(i) == '-')
