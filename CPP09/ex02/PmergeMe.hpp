@@ -5,6 +5,7 @@
 #include <deque>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 class PmergeMe {
 
@@ -14,7 +15,7 @@ class PmergeMe {
 	
 	public:
 		PmergeMe();
-		PmergeMe(std::list<int> lst, std::deque<int> dqe);
+		PmergeMe(int argc, char *argv[]);
 		PmergeMe(const PmergeMe &rhs);
 		~PmergeMe();
 
@@ -22,6 +23,8 @@ class PmergeMe {
 
 		std::list<int>	getLst() const;
 		std::deque<int>	getDqe() const;
+
+		void			create_containers(int argc, char *argv[]);
 };
 
 #endif
