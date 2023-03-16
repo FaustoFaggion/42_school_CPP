@@ -4,7 +4,7 @@ RPN::RPN(void) { }
 
 RPN::RPN(std::string expression)
 {
-	this->expression = expression;
+	_expression = expression;
 }
 
 RPN::RPN(const RPN &rhs)
@@ -52,54 +52,36 @@ int	RPN::chk_str(std::string expression)
 		}
 		i++;
 	}
-	this->expression = expression;
+	_expression = expression;
 	return (0);
 }
 
-int	RPN::solve()
+int	RPN::solve(std::string expression)
 {
+
+	if (chk_str(expression) == 1)
+		return (1);
+
 	size_t	i;
 	int x;
 	int y;
 
 	i = 0;
 	x = 0;
-	while (i < expression.length())
+	y = 0;
+	while (i < _expression.length())
 	{
-		if (expression.at(i) == ' ')
+		if (_expression.at(i) == ' ')
 			i++;
-		else if(std::isdigit(expression.at(i)))
+		else if(std::isdigit(_expression.at(i)))
 		{
-			stk.push(expression.at(i) - '0');
+			stk.push(_expression.at(i) - '0');
 			i++;
 		}
-		else if (strchr("+-*/", expression.at(i)))
+		else if (strchr("+-*/", _expression.at(i)))
 		{
-			if (stk.size() < 2)
-			{
-				std::cout << "Invalid expression at " << expression.at(i) << std::endl;
+			if (calculate(_expression.at(i), x, y) == 1)
 				return (1);
-			}
-			y = stk.top();
-			stk.pop();
-			x = stk.top();
-			stk.pop();
-			if (expression.at(i) == '+')
-				x = x + y;
-			else if (expression.at(i) == '-')
-				x = x - y;
-			else if (expression.at(i) == '*')
-				x = x * y;
-			else if (expression.at(i) == '/')
-			{
-				if (y == 0)
-				{
-					std::cout << "Invalid expression" << std::endl;
-					return (1);
-				}
-				x = x / y;
-			}
-			stk.push(x);
 			i++;
 		}
 	}
@@ -109,5 +91,35 @@ int	RPN::solve()
 		return (1);
 	}
 	std::cout << x << "\n";
+	return (0);
+}
+
+int	RPN::calculate(char c, int &x, int &y)
+{
+	if (stk.size() < 2)
+	{
+		std::cout << "Invalid expression at " << c << std::endl;
+		return (1);
+	}
+	y = stk.top();
+	stk.pop();
+	x = stk.top();
+	stk.pop();
+	if (c == '+')
+		x = x + y;
+	else if (c == '-')
+		x = x - y;
+	else if (c == '*')
+		x = x * y;
+	else if (c == '/')
+	{
+		if (y == 0)
+		{
+			std::cout << "Invalid expression" << std::endl;
+			return (1);
+		}
+		x = x / y;
+	}
+	stk.push(x);
 	return (0);
 }

@@ -25,7 +25,7 @@ class RPN
 
 	private:
 		std::stack<int>			stk;
-		std::string				expression;
+		std::string				_expression;
 
 	public:
 		RPN();
@@ -37,8 +37,11 @@ class RPN
 
 		std::stack<int>	getStk() const;
 
+		int				solve(std::string expression);
+
+	private:	
 		int				chk_str(std::string expression);
-		int				solve();
+		int				calculate(char c, int &x, int &y);
 	
 };
 

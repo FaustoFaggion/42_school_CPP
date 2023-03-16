@@ -9,11 +9,8 @@ int	main(int argc, char *argv[])
 	}
 	std::string	str(argv[1]);
 	RPN	e(str);
-
-	if (e.chk_str(str) == 1)
-		return (1);
 	
-	if (e.solve() == 1)
+	if (e.solve(str) == 1)
 		return (1);
 
 	return (0);
