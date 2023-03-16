@@ -25,6 +25,11 @@ class PmergeMe {
 		std::deque<int>	getDqe() const;
 
 		void			create_containers(int argc, char *argv[]);
+
+		void			sort_containers();
+		
+		template<typename T>
+		void			sort(T &lst);
 };
 
 #endif

@@ -29,4 +29,10 @@ int	main (int argc, char *argv[])
 
 	PmergeMe	pcc;
 	pcc.create_containers(argc, argv);
+
+	pmm.sort_containers();
+
+
+
+
 }
