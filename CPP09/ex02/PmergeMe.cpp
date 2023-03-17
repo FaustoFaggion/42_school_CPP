@@ -72,11 +72,6 @@ void	PmergeMe::sort_containers()
 	sort(_dqe);
 	gettimeofday(&t_dqe, NULL);
 	timersub(&t_dqe, &start, &t_dqe);
-
-	// std::cout << "After: ";
-	// std::list<int>::iterator it;
-	// for (it = _lst.begin(); it != _lst.end(); it++)
-	// 	std::cout << *it << " ";
 }
 
 template<typename T>
