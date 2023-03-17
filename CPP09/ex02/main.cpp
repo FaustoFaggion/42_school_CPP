@@ -39,11 +39,11 @@ int	main (int argc, char *argv[])
 
 	std::cout << std::endl;
 	std::cout << "Time to process a range of " << pmm.getLst().size()
-		<< " elements with std::list : " << pmm.getT_list().tv_usec << " us";
+		<< " elements with std::list : " << pmm.getT_list().tv_sec + pmm.getT_list().tv_usec << " us";
 
 	std::cout << std::endl;
 	std::cout << "Time to process a range of " << pmm.getDqe().size()
-		<< " elements with std::deque : " << pmm.getT_dqe().tv_usec << " us";
+		<< " elements with std::deque : " << pmm.getT_dqe().tv_sec + pmm.getT_dqe().tv_usec << " us";
 
 	std::cout << std::endl;
 }

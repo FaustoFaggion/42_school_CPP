@@ -91,7 +91,7 @@ void	PmergeMe::sort(T& c)
 	size_t	sz = c.size();
 	for (size_t	i = 0; i < sz; i++)
 	{
-		if (i < c.size() / 2)
+		if (i < (sz / 2))
 			left.push_back(c.front());
 		else
 			right.push_back(c.front());
