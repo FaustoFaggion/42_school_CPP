@@ -2,17 +2,20 @@
 
 int	chk_arg(int argc, char *argv[])
 {
-	if (argc == 1)
+		if (argc == 1)
 	{
 		std::cout << "Wrong number of arguments" << std::endl;
 		return (1);
 	}
 	for (int i = 1; i < argc; i++)
 	{
-		if (std::atoi(argv[i]) <= 0)
+		for (size_t j = 0; j < strlen(argv[i]); j++)
 		{
-			std::cout << i << "  " << argv[i] << "invalid number" << std::endl;
-			return (1);
+			if (!isdigit(argv[i][j]))
+			{
+				std::cout << "invalid number" << std::endl;
+				return (1);
+			}
 		}
 	}
 	return (0);

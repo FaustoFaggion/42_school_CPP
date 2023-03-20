@@ -4,7 +4,7 @@
 #include <list>
 #include <deque>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stdlib.h>
 #include <sys/time.h>
 
