@@ -186,8 +186,12 @@ int	BitcoinExchange::validate_value(std::string line)
 	{
 		if (!isdigit(tmp[i]))
 		{
-			std::cout << "Error: bad input => " << line << std::endl;
-			return (1);
+			if (!strchr(".", tmp[i]) || (tmp.find_first_of('.') != tmp.find_last_of('.'))
+				|| i == (tmp.length() - 1))
+			{
+				std::cout << "Error: bad input => " << line << std::endl;
+				return (1);
+			}
 		}
 		i++;
 	}

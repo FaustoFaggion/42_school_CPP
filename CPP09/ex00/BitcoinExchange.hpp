@@ -4,7 +4,7 @@
 
 #include <map>
 #include <fstream>
-#include <string>
+#include <string.h>
 #include <algorithm>
 #include <iostream>
 #include <stdlib.h>
